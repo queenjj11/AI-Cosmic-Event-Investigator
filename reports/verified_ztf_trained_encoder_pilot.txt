@@ -1,0 +1,175 @@
+================================================================================
+ACEI VERIFIED REAL-ZTF PILOT: TRAINED ENCODER TRANSFER PROBE REPORT
+================================================================================
+
+1. EXPERIMENT OBJECTIVE
+--------------------------------------------------------------------------------
+This is a controlled REAL-DATA TRANSFER AND REPRESENTATION COMPATIBILITY PROBE.
+The goal is exclusively to verify that the frozen, production-trained LightCurveEncoder
+(restored from the official production checkpoint) can ingest coordinate-associated real ZTF
+light curves and produce strictly finite, non-degenerate 128-dimensional representations.
+This experiment is NOT an anomaly-detection benchmark; no AUROC/AUPRC/F1 metrics are reported.
+
+2. CHECKPOINT PROVENANCE, ARCHITECTURE & FROZEN INTEGRITY
+--------------------------------------------------------------------------------
+Checkpoint File:       models/checkpoints/acei_multimodal_production.pt
+File Size:             50493902 bytes (48.15 MB)
+SHA-256 Checksum:      e5c78fdc6f72cf972f4a3f5bf1b99dbb704aa7f047f7ed46ead1e9e538ffbc72
+Creation Timestamp:    2026-09-18T20:01:52Z
+PyTorch Version:       PyTorch 2.14.0
+Training Seed:         42
+Training Epochs:       5
+Learning Rate:         0.0005
+Optimizer:             AdamW
+Class Mapping:         {'SN_Ia': 0, 'SN_II': 1, 'Stellar_Flare': 2, 'Variable_Star': 3}
+Dataset Type:          synthetic_benchmark
+Real ZTF Data Used:    False (CONFIRMED ZERO REAL DATA IN TRAINING)
+Parameter Invariance:  max parameter shift during inference = 0.000000e+00
+
+Trained LightCurveEncoder Architecture (Verified from Checkpoint & Source):
+  - Total Parameters:   425,072 (425.07K parameters)
+  - Transformer Layers: 3 (d_model=128, nhead=4, dim_feedforward=256, dropout=0.2)
+  - Temporal Encoding:  Time2Vec (output_dim=32: 1 linear + 31 periodic)
+  - Passband Embedding: nn.Embedding(num_embeddings=5, embedding_dim=16)
+  - Photometry Linear:  Linear(in_features=2, out_features=32)
+  - Input Projection:   Sequential(Linear(80, 128), LayerNorm(128)) [where 80 = 32 + 16 + 32]
+  - Output Head:        Sequential(Linear(128, 128), LayerNorm(128))
+
+Photometric Preprocessing Contract (Verified from Source):
+  - Magnitude to Flux:  F = 10^(-0.4 * (mag - 27.5)), sigma_F = (ln(10) / 2.5) * F * sigma_mag (ZP=27.5)
+  - Normalization:      Peak-scaled F_norm = 1.5 * (F / F_peak), sigma_norm = 1.5 * (sigma_F / F_peak)
+                        (Note: additive zero-point cancels algebraically in F / F_peak ratio)
+  - Token Tensor:       Shape (B, 50, 4) with strict column order [time, flux, flux_err, band_idx]
+
+3. REAL-ZTF OBJECT PROVENANCE & SOURCE ASSOCIATION
+--------------------------------------------------------------------------------
+Object ID:              SN_2019np (ZTF: ZTF19aacgslb)
+  Target Coordinates:   RA = 157.34150 deg, Dec = +29.51067 deg (J2000)
+  Authoritative Class:  SN Ia
+  Authority Source:     IAU Transient Name Server (TNS) / ZTF Bright Transient Survey (BTS)
+  Matched ZTF OIDs:     {"zg": "1665105100004224", "zr": "1665205100001064", "zi": "1665305100027349"}
+  Available Filters:    zg+zi+zr
+  Missing Filters:      none (Partial Coverage: False)
+  Raw Observations:     29
+
+Object ID:              SN_2020jfo (ZTF: ZTF20aaynrrh)
+  Target Coordinates:   RA = 185.46033 deg, Dec = +4.48168 deg (J2000)
+  Authoritative Class:  SN IIP
+  Authority Source:     IAU Transient Name Server (TNS) / ZTF Bright Transient Survey (BTS) / Sollerman et al. 2021
+  Matched ZTF OIDs:     {"zg": "473106200018892", "zr": "473206200035193", "zi": "473306200010785"}
+  Available Filters:    zg+zi+zr
+  Missing Filters:      none (Partial Coverage: False)
+  Raw Observations:     572
+
+Object ID:              AT_2018cow (ZTF: ZTF18abukavn)
+  Target Coordinates:   RA = 244.00092 deg, Dec = +22.26803 deg (J2000)
+  Authoritative Class:  FBOT
+  Authority Source:     IAU Transient Name Server (TNS) / Prentice et al. 2018 / Perley et al. 2019
+  Matched ZTF OIDs:     {"zg": "584115200014329", "zi": "584315200035008"}
+  Available Filters:    zg+zi
+  Missing Filters:      zr (Partial Coverage: True)
+  Raw Observations:     61
+
+Object ID:              SN_2018zd (ZTF: ZTF18aarkpda)
+  Target Coordinates:   RA = 94.51325 deg, Dec = +78.36692 deg (J2000)
+  Authoritative Class:  SN II-P
+  Authority Source:     IAU Transient Name Server (TNS) / ZTF Bright Transient Survey (BTS) / Hiramatsu et al. 2021
+  Matched ZTF OIDs:     {"zg": "858116400017203", "zr": "858216400012109"}
+  Available Filters:    zg+zr
+  Missing Filters:      zi (Partial Coverage: True)
+  Raw Observations:     244
+
+Object ID:              ZTF_J195200.60+295217.4 (ZTF: Field686_Star)
+  Target Coordinates:   RA = 298.00252 deg, Dec = +29.87149 deg (J2000)
+  Authoritative Class:  Unclassified Field Star (Variability unconfirmed; Gaia DR3 VarFlag: NOT_AVAILABLE; IRSA sample object)
+  Authority Source:     Gaia DR3 (I/355/gaiadr3 Source 2028869231302243712) / NASA-IPAC IRSA Tutorial Reference
+  Matched ZTF OIDs:     {"zg": "686103400034440", "zr": "686203400035219", "zi": "686303400036256"}
+  Available Filters:    zg+zi+zr
+  Missing Filters:      none (Partial Coverage: False)
+  Raw Observations:     2118
+
+4. REAL-ZTF PREPROCESSING & SEQUENCE CONSTRUCTION
+--------------------------------------------------------------------------------
+Object ID                     Raw  Clean Window Tokens  PadFrac  Dropped?  Clipped?  NegFlux?
+----------------------------------------------------------------------------------------
+SN_2019np                      29     25     11     11     0.78      True     False     False
+SN_2020jfo                    572    526     54     42     0.16      True     False     False
+AT_2018cow                     61     58     16     16     0.68      True     False     False
+SN_2018zd                     244    223     15     15     0.70      True     False     False
+ZTF_J195200.60+295217.4      2118   1814    177     50     0.00      True     False     False
+
+DATA-COVERAGE LIMITATION:
+Three of five pilot objects contained fewer than 20 valid tokens after preprocessing, resulting
+in >=68% padding (SN 2019np: 78%, AT 2018cow: 68%, SN 2018zd: 70%). These cases demonstrate tensor
+compatibility but provide limited temporal sampling for assessing representation quality.
+
+5. TRAINED EMBEDDING QUALITY CHECKS
+--------------------------------------------------------------------------------
+Object ID                     Shape  Finite?  NaNs  Infs   L2 Norm      Mean      Std     Range [Min, Max]
+---------------------------------------------------------------------------------------------------
+SN_2019np                  (128,)     True     0     0   11.3200   -0.0005   1.0006      [-2.708, 2.313]
+SN_2020jfo                 (128,)     True     0     0   11.3211   -0.0004   1.0007      [-2.920, 2.834]
+AT_2018cow                 (128,)     True     0     0   11.3206   -0.0005   1.0006      [-2.516, 2.538]
+SN_2018zd                  (128,)     True     0     0   11.3218   -0.0005   1.0007      [-2.679, 2.790]
+ZTF_J195200.60+295217.4    (128,)     True     0     0   11.3186   -0.0006   1.0004      [-2.318, 2.330]
+
+6. PAIRWISE EMBEDDING SIMILARITY (REPRESENTATION SANITY CHECK)
+--------------------------------------------------------------------------------
+Minimum Pairwise Cosine Similarity:  0.2564
+Maximum Pairwise Cosine Similarity:  0.9445
+Mean Pairwise Cosine Similarity:     0.6837
+Median Pairwise Cosine Similarity:   0.7467
+
+Pairwise Cosine Similarity Matrix (5 x 5):
+                            SN_2019np SN_2020jfo AT_2018cow  SN_2018zd ZTF_J19520
+SN_2019np                      1.0000     0.8834     0.5230     0.9165     0.8087
+SN_2020jfo                     0.8834     1.0000     0.3058     0.9445     0.6847
+AT_2018cow                     0.5230     0.3058     1.0000     0.2564     0.8786
+SN_2018zd                      0.9165     0.9445     0.2564     1.0000     0.6355
+ZTF_J195200.60+295217.4        0.8087     0.6847     0.8786     0.6355     1.0000
+
+SCIENTIFIC CAVEAT ON SIMILARITY STRUCTURE:
+The five-object pilot produced finite embeddings with measurable variation in pairwise angular
+similarity. The observed similarity structure is descriptive only and is insufficient to establish
+class-level latent separation.
+
+7. COMPARISON: TRAINED CHECKPOINT VS PREVIOUS RANDOM ENCODER
+--------------------------------------------------------------------------------
+Previous Pilot: Architecture/data-contract compatibility test using an UNTRAINED random encoder.
+Current Pilot:  Trained-checkpoint real-data representation compatibility probe.
+
+Object ID                   Untrained L2 Norm  Trained L2 Norm   Trained-vs-Rand Cosine
+--------------------------------------------------------------------------------------
+SN_2019np                             11.3135          11.3200                  -0.0673
+SN_2020jfo                            11.3135          11.3211                  -0.0975
+AT_2018cow                            11.3135          11.3206                  -0.1141
+SN_2018zd                             11.3135          11.3218                  -0.0490
+ZTF_J195200.60+295217.4               11.3135          11.3186                  -0.1583
+
+Finding:
+The checkpoint-restored encoder produces representations that differ from those of a freshly
+initialized encoder, confirming that the inference path is using the learned checkpoint parameters.
+
+8. EXPLICIT SCIENTIFIC LIMITATIONS
+--------------------------------------------------------------------------------
+A. WHAT IS ESTABLISHED:
+   - The checkpoint contains verified production-trained weights.
+   - Real ZTF observations are cleanly transformed into the production contract (B, 50, 4).
+   - The trained LightCurveEncoder ingests real photometric sequences without NaN/Inf failures.
+   - Embeddings are strictly finite and non-degenerate across the tested inputs.
+   - Zero model parameters changed during inference.
+   - Zero real data participated in training, calibration, or thresholding.
+
+B. WHAT IS NOT ESTABLISHED:
+   - Real-world anomaly detection performance is NOT established.
+   - Astrophysical generalization to real transients is NOT proven.
+   - Zero-shot anomaly classification accuracy is NOT measured.
+   - Calibrated posterior probabilities on real data are NOT validated.
+   - The small 5-object sample is NOT an independent performance benchmark.
+   - Class-level separation in latent space is NOT proven (N=5 sample size limitation).
+
+9. FINAL COMPATIBILITY VERDICT
+--------------------------------------------------------------------------------
+TRAINED REPRESENTATION REAL-DATA COMPATIBILITY: VERIFIED SUCCESSFUL
+The trained ACEI LightCurveEncoder successfully ingests and encodes real ZTF multi-band light curves.
+================================================================================

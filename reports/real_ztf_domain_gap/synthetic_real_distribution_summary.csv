@@ -1,0 +1,23 @@
+metric_category,parameter,measurement_type,domain,mean,median,std,min,max,unit
+Sampling,Valid Token Count,Engineered Tokenization,Synthetic_Reference (N=84),49.88095238095238,50.0,0.6249716546860326,45.0,50.0,tokens [0..50]
+Sampling,Valid Token Count,Engineered Tokenization,Real_ZTF_Primary (N=106),44.367924528301884,50.0,8.983554651861548,6.0,50.0,tokens [0..50]
+Sampling,Padding Fraction,Engineered Padding,Synthetic_Reference (N=84),0.002380952380952381,0.0,0.012499433093720655,0.0,0.1,fraction [0..1]
+Sampling,Padding Fraction,Engineered Padding,Real_ZTF_Primary (N=106),0.11264150943396227,0.0,0.17967109303723097,0.0,0.88,fraction [0..1]
+Sampling,Filter Count,Physical Instrument,Synthetic_Reference (N=84),3.0,3.0,0.0,3.0,3.0,bands
+Sampling,Filter Count,Physical Instrument,Real_ZTF_Primary (N=106),2.7735849056603774,3.0,0.4185108115626196,2.0,3.0,bands
+Temporal,Window Time Span,Physical Time Duration,Synthetic_Reference (N=84),50.91184989823536,51.32937882337684,2.504421388870247,43.619864242360954,54.97875901893383,days
+Temporal,Window Time Span,Physical Time Duration,Real_ZTF_Primary (N=106),70.42370846586407,75.96089172363281,12.767699774028408,19.007604598999023,79.96932983398438,days
+Temporal,Full Survey Baseline,Physical Time Duration,Synthetic_Reference (N=84),50.91184989823536,51.32937882337684,2.504421388870247,43.619864242360954,54.97875901893383,days
+Temporal,Full Survey Baseline,Physical Time Duration,Real_ZTF_Primary (N=106),2629.7053877358494,2724.837,347.4769598306002,619.7206,2770.7355,days
+Temporal,Sampling Density,Derived Cadence Rate,Synthetic_Reference (N=84),0.9822419719732568,0.9738146403758824,0.05207509049860544,0.8481241828391277,1.14626674952929,observations/day
+Temporal,Sampling Density,Derived Cadence Rate,Real_ZTF_Primary (N=106),0.6400998965747945,0.6337409729486834,0.1646822996158628,0.21434125587854128,2.0028837908096437,observations/day
+Photometry,Normalized Flux,Scaled Flux,Synthetic_Reference (N=84),0.4240534021307031,0.4276061865477384,0.3000131961576338,0.01,1.0794628512618294,scaled flux units
+Photometry,Normalized Flux,Scaled Flux,Real_ZTF_Primary (N=106),0.7458771069413525,0.7488431930541992,0.4206793702119003,0.008480182848870754,1.5,scaled flux units
+Photometry,Normalized Flux Error,Scaled Flux Uncertainty,Synthetic_Reference (N=84),0.03848106804261406,0.03855212373095476,0.0060002639231526754,0.030199999999999998,0.05158925702523659,scaled error units
+Photometry,Normalized Flux Error,Scaled Flux Uncertainty,Real_ZTF_Primary (N=106),0.022386744620915926,0.01555872056633234,0.022120748752351236,0.00037052074912935495,0.17966586351394653,scaled error units
+Representation,128-D LC Embedding Norm,Learned Representation,Synthetic_Reference (N=84),11.321104208628336,11.320870876312256,0.0017077083721241206,11.316919326782227,11.325263977050781,L2 norm
+Representation,128-D LC Embedding Norm,Learned Representation,Real_ZTF_Primary (N=106),11.321090212408102,11.321539878845215,0.0020739696535546797,11.313044548034668,11.324369430541992,L2 norm
+Representation,256-D Fused Embedding Norm,Learned Joint Representation,Synthetic_Reference (N=84),11.832032464799427,11.832542419433594,0.38294487755653633,11.070621490478516,12.731073379516602,L2 norm
+Representation,256-D Fused Embedding Norm,Learned Joint Representation,Real_ZTF_Primary (N=106),11.71482583711732,11.729053497314453,0.11770377241311941,11.408082962036133,11.964157104492188,L2 norm
+Representation,Distance to Synthetic Centroid,Latent Space Metric,Synthetic_Reference (N=84),6.757241989885058,6.832451581954956,1.8088449562106297,3.441007375717163,10.205924987792969,Euclidean distance in R^256
+Representation,Distance to Synthetic Centroid,Latent Space Metric,Real_ZTF_Primary (N=106),6.992904177251852,6.948511838912964,1.2033407305772104,4.5147929191589355,9.066306114196777,Euclidean distance in R^256

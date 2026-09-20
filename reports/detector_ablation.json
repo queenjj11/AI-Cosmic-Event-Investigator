@@ -1,0 +1,223 @@
+{
+  "benchmark_source": "reports/anomaly_evaluation.csv",
+  "threshold": 0.65,
+  "total_test_events": 50,
+  "configurations": {
+    "Mahalanobis only": {
+      "name": "Mahalanobis only",
+      "formula": "score = s_mah",
+      "metrics": {
+        "auroc": 0.745,
+        "auprc": 0.8257445535151614,
+        "average_precision": 0.8292089878900553,
+        "accuracy": 0.6,
+        "precision": 0.8571428571428571,
+        "recall": 0.4,
+        "tpr": 0.4,
+        "specificity": 0.9,
+        "fpr": 0.1,
+        "f1": 0.5454545454545455,
+        "tp": 12,
+        "fp": 2,
+        "tn": 18,
+        "fn": 18,
+        "tpr_at_10_fpr": 0.4
+      },
+      "per_class": {
+        "LRN": {
+          "n": 10,
+          "detected": 1,
+          "recall": 0.1,
+          "mean_score": 0.2204007410586863
+        },
+        "SLSN": {
+          "n": 10,
+          "detected": 10,
+          "recall": 1.0,
+          "mean_score": 0.9071757749103583
+        },
+        "TDE": {
+          "n": 10,
+          "detected": 1,
+          "recall": 0.1,
+          "mean_score": 0.20432690093559858
+        }
+      },
+      "known_fpr": 0.1,
+      "known_flagged": 2,
+      "known_mean_score": 0.1755408468660333
+    },
+    "Autoencoder + Mahalanobis": {
+      "name": "Autoencoder + Mahalanobis",
+      "formula": "score = 0.50 * s_ae + 0.50 * s_mah",
+      "metrics": {
+        "auroc": 0.6966666666666667,
+        "auprc": 0.8003361888236358,
+        "average_precision": 0.8042017517564113,
+        "accuracy": 0.56,
+        "precision": 0.7857142857142857,
+        "recall": 0.36666666666666664,
+        "tpr": 0.36666666666666664,
+        "specificity": 0.85,
+        "fpr": 0.15,
+        "f1": 0.5,
+        "tp": 11,
+        "fp": 3,
+        "tn": 17,
+        "fn": 19,
+        "tpr_at_10_fpr": 0.3333333333333333
+      },
+      "per_class": {
+        "LRN": {
+          "n": 10,
+          "detected": 1,
+          "recall": 0.1,
+          "mean_score": 0.2500464973758105
+        },
+        "SLSN": {
+          "n": 10,
+          "detected": 9,
+          "recall": 0.9,
+          "mean_score": 0.8862452973076234
+        },
+        "TDE": {
+          "n": 10,
+          "detected": 1,
+          "recall": 0.1,
+          "mean_score": 0.18953262948058888
+        }
+      },
+      "known_fpr": 0.15,
+      "known_flagged": 3,
+      "known_mean_score": 0.22493919792682582
+    },
+    "Mahalanobis + Energy": {
+      "name": "Mahalanobis + Energy",
+      "formula": "score = 0.75 * s_mah + 0.25 * s_ene",
+      "metrics": {
+        "auroc": 0.7083333333333333,
+        "auprc": 0.7459741949180647,
+        "average_precision": 0.7571006728740225,
+        "accuracy": 0.54,
+        "precision": 0.8181818181818182,
+        "recall": 0.3,
+        "tpr": 0.3,
+        "specificity": 0.9,
+        "fpr": 0.1,
+        "f1": 0.43902439024390244,
+        "tp": 9,
+        "fp": 2,
+        "tn": 18,
+        "fn": 21,
+        "tpr_at_10_fpr": 0.4
+      },
+      "per_class": {
+        "LRN": {
+          "n": 10,
+          "detected": 1,
+          "recall": 0.1,
+          "mean_score": 0.25233089774866174
+        },
+        "SLSN": {
+          "n": 10,
+          "detected": 7,
+          "recall": 0.7,
+          "mean_score": 0.6830873338291179
+        },
+        "TDE": {
+          "n": 10,
+          "detected": 1,
+          "recall": 0.1,
+          "mean_score": 0.21034199435026962
+        }
+      },
+      "known_fpr": 0.1,
+      "known_flagged": 2,
+      "known_mean_score": 0.18458827086308277
+    },
+    "Full Ensemble (Current)": {
+      "name": "Full Ensemble (Current)",
+      "formula": "score = 0.80 * (0.40 * s_ae + 0.35 * s_mah + 0.25 * s_ene) + 0.20 * max(s_ae, s_mah, s_ene)",
+      "metrics": {
+        "auroc": 0.6950000000000001,
+        "auprc": 0.7411604630925651,
+        "average_precision": 0.7520037081798102,
+        "accuracy": 0.54,
+        "precision": 0.7333333333333333,
+        "recall": 0.36666666666666664,
+        "tpr": 0.36666666666666664,
+        "specificity": 0.8,
+        "fpr": 0.2,
+        "f1": 0.4888888888888889,
+        "tp": 11,
+        "fp": 4,
+        "tn": 16,
+        "fn": 19,
+        "tpr_at_10_fpr": 0.26666666666666666
+      },
+      "per_class": {
+        "LRN": {
+          "n": 10,
+          "detected": 2,
+          "recall": 0.2,
+          "mean_score": 0.3090114480174011
+        },
+        "SLSN": {
+          "n": 10,
+          "detected": 8,
+          "recall": 0.8,
+          "mean_score": 0.7203574884695131
+        },
+        "TDE": {
+          "n": 10,
+          "detected": 1,
+          "recall": 0.1,
+          "mean_score": 0.2229936948749902
+        }
+      },
+      "known_fpr": 0.2,
+      "known_flagged": 4,
+      "known_mean_score": 0.25074599199477565
+    }
+  },
+  "rankings": {
+    "by_auroc": [
+      "Mahalanobis only",
+      "Mahalanobis + Energy",
+      "Autoencoder + Mahalanobis",
+      "Full Ensemble (Current)"
+    ],
+    "by_auprc": [
+      "Mahalanobis only",
+      "Autoencoder + Mahalanobis",
+      "Mahalanobis + Energy",
+      "Full Ensemble (Current)"
+    ],
+    "by_f1": [
+      "Mahalanobis only",
+      "Autoencoder + Mahalanobis",
+      "Full Ensemble (Current)",
+      "Mahalanobis + Energy"
+    ]
+  },
+  "statistical_tests_vs_mahalanobis": {
+    "Autoencoder + Mahalanobis": {
+      "diff_mean": 0.048672404187565986,
+      "ci_lower": 0.0,
+      "ci_upper": 0.10418749999999985,
+      "p_value": 0.053
+    },
+    "Mahalanobis + Energy": {
+      "diff_mean": 0.03587393560004781,
+      "ci_lower": -0.037044552669552505,
+      "ci_upper": 0.10243055555555547,
+      "p_value": 0.329
+    },
+    "Full Ensemble (Current)": {
+      "diff_mean": 0.04827363234258461,
+      "ci_lower": -0.04166666666666663,
+      "ci_upper": 0.1305504493464051,
+      "p_value": 0.288
+    }
+  }
+}

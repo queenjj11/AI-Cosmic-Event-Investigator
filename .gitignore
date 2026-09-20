@@ -1,0 +1,55 @@
+# Python Virtual Environments
+.venv/
+.venv*/
+env/
+venv/
+
+# Byte-compiled / Python cache
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.coverage
+htmlcov/
+.彰
+
+# Node / Next.js
+node_modules/
+frontend/node_modules/
+frontend/.next/
+frontend/out/
+.npm/
+
+# Operating System & Editor Files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+.vscode/
+.idea/
+
+# Environment variables & secrets
+.env
+.env.local
+.env.development.local
+.env.production.local
+
+# Temporary / scratch artifacts
+scratch/
+tmp/
+*.log
+
+# Raw and intermediate data artifacts (local only)
+data/real_ztf_benchmark/raw/
+data/real_ztf_pilot/
+data/verified_ztf_pilot/
+data/real_ztf_benchmark/*.npy
+data/real_ztf_benchmark/real_ztf_primary_embeddings.*
+data/real_ztf_benchmark/real_ztf_primary_evaluation.csv
+data/real_ztf_benchmark/full_retrieval_results.csv
+data/real_ztf_benchmark/photometric_pilot.csv
+*.npy
+

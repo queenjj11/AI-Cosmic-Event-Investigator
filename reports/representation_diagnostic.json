@@ -1,0 +1,679 @@
+{
+  "seed": 42,
+  "threshold": 0.65,
+  "architecture": {
+    "image_dim": 128,
+    "lightcurve_dim": 128,
+    "fused_dim": 256,
+    "fusion_mechanism": "CrossAttentionFusion (4-head bidirectional cross-attention + gating)",
+    "classification_head": "Linear(256->128) -> GELU -> Dropout -> Linear(128->4)",
+    "loss": "CrossEntropyLoss"
+  },
+  "separability": {
+    "Image-only": {
+      "auroc": 0.52,
+      "auprc": 0.594280381517223,
+      "average_precision": 0.6079371147411182,
+      "accuracy": 0.4,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "fpr": 0.0,
+      "tp": 0,
+      "fp": 0,
+      "tn": 20,
+      "fn": 30,
+      "lrn_recall": 0.0,
+      "slsn_recall": 0.0,
+      "tde_recall": 0.0
+    },
+    "Lightcurve-only": {
+      "auroc": 0.7816666666666666,
+      "auprc": 0.8535841276676561,
+      "average_precision": 0.856322434227587,
+      "accuracy": 0.58,
+      "precision": 0.9090909090909091,
+      "recall": 0.3333333333333333,
+      "f1": 0.4878048780487804,
+      "fpr": 0.05,
+      "tp": 10,
+      "fp": 1,
+      "tn": 19,
+      "fn": 20,
+      "lrn_recall": 0.0,
+      "slsn_recall": 1.0,
+      "tde_recall": 0.0
+    },
+    "Fused 256-D": {
+      "auroc": 0.745,
+      "auprc": 0.8257445535151614,
+      "average_precision": 0.8292089878900553,
+      "accuracy": 0.6,
+      "precision": 0.8571428571428571,
+      "recall": 0.4,
+      "f1": 0.5454545454545455,
+      "fpr": 0.1,
+      "tp": 12,
+      "fp": 2,
+      "tn": 18,
+      "fn": 18,
+      "lrn_recall": 0.1,
+      "slsn_recall": 1.0,
+      "tde_recall": 0.1
+    }
+  },
+  "fused_geometry": {
+    "class_stats": {
+      "SN_Ia": {
+        "n": 5,
+        "mean": 19.21347713470459,
+        "median": 19.017717361450195,
+        "std": 3.616892687738193,
+        "min": 15.530827522277832,
+        "max": 25.241912841796875
+      },
+      "SN_II": {
+        "n": 5,
+        "mean": 16.695228004455565,
+        "median": 15.938515663146973,
+        "std": 3.342136475334125,
+        "min": 12.7180757522583,
+        "max": 22.188222885131836
+      },
+      "Stellar_Flare": {
+        "n": 5,
+        "mean": 19.01341857910156,
+        "median": 18.220441818237305,
+        "std": 3.7720400834149377,
+        "min": 13.814502716064453,
+        "max": 25.34172248840332
+      },
+      "Variable_Star": {
+        "n": 5,
+        "mean": 17.095213317871092,
+        "median": 16.047462463378906,
+        "std": 2.1352599076996217,
+        "min": 14.946904182434082,
+        "max": 20.38629913330078
+      },
+      "LRN": {
+        "n": 10,
+        "mean": 19.277339267730714,
+        "median": 18.555556297302246,
+        "std": 3.5457388183219924,
+        "min": 15.632950782775879,
+        "max": 28.022924423217773
+      },
+      "SLSN": {
+        "n": 10,
+        "mean": 27.25799674987793,
+        "median": 27.279170036315918,
+        "std": 2.1139178228244804,
+        "min": 24.394550323486328,
+        "max": 31.21648597717285
+      },
+      "TDE": {
+        "n": 10,
+        "mean": 19.064241886138916,
+        "median": 19.066033363342285,
+        "std": 2.790216513897653,
+        "min": 15.377243995666504,
+        "max": 25.107666015625
+      }
+    },
+    "anomalies_detail": {
+      "LRN": [
+        {
+          "object_id": "ZTF_ANOMALY_LRN_0000",
+          "nearest_known_class": "SN_Ia",
+          "nearest_distance": 17.1580810546875,
+          "dist_to_SN_Ia": 17.1580810546875,
+          "dist_to_SN_II": 25.71575927734375,
+          "dist_to_Stellar_Flare": 31.471576690673828,
+          "dist_to_Variable_Star": 17.503053665161133
+        },
+        {
+          "object_id": "ZTF_ANOMALY_LRN_0003",
+          "nearest_known_class": "SN_Ia",
+          "nearest_distance": 20.441720962524414,
+          "dist_to_SN_Ia": 20.441720962524414,
+          "dist_to_SN_II": 26.124073028564453,
+          "dist_to_Stellar_Flare": 33.42060089111328,
+          "dist_to_Variable_Star": 20.608644485473633
+        },
+        {
+          "object_id": "ZTF_ANOMALY_LRN_0006",
+          "nearest_known_class": "Variable_Star",
+          "nearest_distance": 18.344547271728516,
+          "dist_to_SN_Ia": 19.239830017089844,
+          "dist_to_SN_II": 21.559677124023438,
+          "dist_to_Stellar_Flare": 36.75038528442383,
+          "dist_to_Variable_Star": 18.344547271728516
+        },
+        {
+          "object_id": "ZTF_ANOMALY_LRN_0009",
+          "nearest_known_class": "Variable_Star",
+          "nearest_distance": 15.632950782775879,
+          "dist_to_SN_Ia": 15.9213285446167,
+          "dist_to_SN_II": 17.1992244720459,
+          "dist_to_Stellar_Flare": 36.44523239135742,
+          "dist_to_Variable_Star": 15.632950782775879
+        },
+        {
+          "object_id": "ZTF_ANOMALY_LRN_0012",
+          "nearest_known_class": "Stellar_Flare",
+          "nearest_distance": 28.022924423217773,
+          "dist_to_SN_Ia": 29.106664657592773,
+          "dist_to_SN_II": 36.31901550292969,
+          "dist_to_Stellar_Flare": 28.022924423217773,
+          "dist_to_Variable_Star": 30.039615631103516
+        },
+        {
+          "object_id": "ZTF_ANOMALY_LRN_0015",
+          "nearest_known_class": "SN_Ia",
+          "nearest_distance": 21.11555290222168,
+          "dist_to_SN_Ia": 21.11555290222168,
+          "dist_to_SN_II": 26.169673919677734,
+          "dist_to_Stellar_Flare": 37.47599411010742,
+          "dist_to_Variable_Star": 21.157743453979492
+        },
+        {
+          "object_id": "ZTF_ANOMALY_LRN_0018",
+          "nearest_known_class": "SN_II",
+          "nearest_distance": 15.636295318603516,
+          "dist_to_SN_Ia": 19.793373107910156,
+          "dist_to_SN_II": 15.636295318603516,
+          "dist_to_Stellar_Flare": 38.484310150146484,
+          "dist_to_Variable_Star": 19.860576629638672
+        },
+        {
+          "object_id": "ZTF_ANOMALY_LRN_0021",
+          "nearest_known_class": "SN_Ia",
+          "nearest_distance": 21.270389556884766,
+          "dist_to_SN_Ia": 21.270389556884766,
+          "dist_to_SN_II": 27.364757537841797,
+          "dist_to_Stellar_Flare": 27.509929656982422,
+          "dist_to_Variable_Star": 21.634767532348633
+        },
+        {
+          "object_id": "ZTF_ANOMALY_LRN_0024",
+          "nearest_known_class": "Variable_Star",
+          "nearest_distance": 16.38436508178711,
+          "dist_to_SN_Ia": 18.10405158996582,
+          "dist_to_SN_II": 19.96893882751465,
+          "dist_to_Stellar_Flare": 38.667606353759766,
+          "dist_to_Variable_Star": 16.38436508178711
+        },
+        {
+          "object_id": "ZTF_ANOMALY_LRN_0027",
+          "nearest_known_class": "SN_Ia",
+          "nearest_distance": 18.766565322875977,
+          "dist_to_SN_Ia": 18.766565322875977,
+          "dist_to_SN_II": 25.309144973754883,
+          "dist_to_Stellar_Flare": 34.88364028930664,
+          "dist_to_Variable_Star": 19.656110763549805
+        }
+      ],
+      "SLSN": [
+        {
+          "object_id": "ZTF_ANOMALY_SLSN_0001",
+          "nearest_known_class": "SN_II",
+          "nearest_distance": 29.221328735351562,
+          "dist_to_SN_Ia": 37.948402404785156,
+          "dist_to_SN_II": 29.221328735351562,
+          "dist_to_Stellar_Flare": 48.85013198852539,
+          "dist_to_Variable_Star": 37.326839447021484
+        },
+        {
+          "object_id": "ZTF_ANOMALY_SLSN_0004",
+          "nearest_known_class": "SN_II",
+          "nearest_distance": 25.46821403503418,
+          "dist_to_SN_Ia": 34.4942626953125,
+          "dist_to_SN_II": 25.46821403503418,
+          "dist_to_Stellar_Flare": 46.7489128112793,
+          "dist_to_Variable_Star": 33.54266357421875
+        },
+        {
+          "object_id": "ZTF_ANOMALY_SLSN_0007",
+          "nearest_known_class": "SN_II",
+          "nearest_distance": 27.681522369384766,
+          "dist_to_SN_Ia": 36.346012115478516,
+          "dist_to_SN_II": 27.681522369384766,
+          "dist_to_Stellar_Flare": 48.1972541809082,
+          "dist_to_Variable_Star": 35.78317642211914
+        },
+        {
+          "object_id": "ZTF_ANOMALY_SLSN_0010",
+          "nearest_known_class": "SN_II",
+          "nearest_distance": 26.87681770324707,
+          "dist_to_SN_Ia": 35.33638381958008,
+          "dist_to_SN_II": 26.87681770324707,
+          "dist_to_Stellar_Flare": 48.605716705322266,
+          "dist_to_Variable_Star": 34.848960876464844
+        },
+        {
+          "object_id": "ZTF_ANOMALY_SLSN_0013",
+          "nearest_known_class": "SN_II",
+          "nearest_distance": 24.394550323486328,
+          "dist_to_SN_Ia": 34.49696731567383,
+          "dist_to_SN_II": 24.394550323486328,
+          "dist_to_Stellar_Flare": 47.30666732788086,
+          "dist_to_Variable_Star": 33.47898864746094
+        },
+        {
+          "object_id": "ZTF_ANOMALY_SLSN_0016",
+          "nearest_known_class": "SN_II",
+          "nearest_distance": 26.013187408447266,
+          "dist_to_SN_Ia": 34.9175910949707,
+          "dist_to_SN_II": 26.013187408447266,
+          "dist_to_Stellar_Flare": 48.75905990600586,
+          "dist_to_Variable_Star": 34.4144401550293
+        },
+        {
+          "object_id": "ZTF_ANOMALY_SLSN_0019",
+          "nearest_known_class": "SN_II",
+          "nearest_distance": 31.21648597717285,
+          "dist_to_SN_Ia": 38.081573486328125,
+          "dist_to_SN_II": 31.21648597717285,
+          "dist_to_Stellar_Flare": 49.78297805786133,
+          "dist_to_Variable_Star": 36.96929168701172
+        },
+        {
+          "object_id": "ZTF_ANOMALY_SLSN_0022",
+          "nearest_known_class": "SN_II",
+          "nearest_distance": 28.4695987701416,
+          "dist_to_SN_Ia": 37.339744567871094,
+          "dist_to_SN_II": 28.4695987701416,
+          "dist_to_Stellar_Flare": 49.66004943847656,
+          "dist_to_Variable_Star": 36.93701934814453
+        },
+        {
+          "object_id": "ZTF_ANOMALY_SLSN_0025",
+          "nearest_known_class": "SN_II",
+          "nearest_distance": 28.810138702392578,
+          "dist_to_SN_Ia": 37.24049758911133,
+          "dist_to_SN_II": 28.810138702392578,
+          "dist_to_Stellar_Flare": 50.20174789428711,
+          "dist_to_Variable_Star": 36.97889709472656
+        },
+        {
+          "object_id": "ZTF_ANOMALY_SLSN_0028",
+          "nearest_known_class": "SN_II",
+          "nearest_distance": 24.428123474121094,
+          "dist_to_SN_Ia": 33.567935943603516,
+          "dist_to_SN_II": 24.428123474121094,
+          "dist_to_Stellar_Flare": 46.97932052612305,
+          "dist_to_Variable_Star": 32.61933898925781
+        }
+      ],
+      "TDE": [
+        {
+          "object_id": "ZTF_ANOMALY_TDE_0002",
+          "nearest_known_class": "SN_Ia",
+          "nearest_distance": 18.857160568237305,
+          "dist_to_SN_Ia": 18.857160568237305,
+          "dist_to_SN_II": 23.692079544067383,
+          "dist_to_Stellar_Flare": 33.30935287475586,
+          "dist_to_Variable_Star": 18.913618087768555
+        },
+        {
+          "object_id": "ZTF_ANOMALY_TDE_0005",
+          "nearest_known_class": "SN_Ia",
+          "nearest_distance": 19.095121383666992,
+          "dist_to_SN_Ia": 19.095121383666992,
+          "dist_to_SN_II": 24.435224533081055,
+          "dist_to_Stellar_Flare": 39.18930435180664,
+          "dist_to_Variable_Star": 22.124967575073242
+        },
+        {
+          "object_id": "ZTF_ANOMALY_TDE_0008",
+          "nearest_known_class": "Variable_Star",
+          "nearest_distance": 15.959263801574707,
+          "dist_to_SN_Ia": 17.516469955444336,
+          "dist_to_SN_II": 22.47935676574707,
+          "dist_to_Stellar_Flare": 40.712677001953125,
+          "dist_to_Variable_Star": 15.959263801574707
+        },
+        {
+          "object_id": "ZTF_ANOMALY_TDE_0011",
+          "nearest_known_class": "SN_Ia",
+          "nearest_distance": 19.616180419921875,
+          "dist_to_SN_Ia": 19.616180419921875,
+          "dist_to_SN_II": 25.36244773864746,
+          "dist_to_Stellar_Flare": 35.894927978515625,
+          "dist_to_Variable_Star": 19.91283416748047
+        },
+        {
+          "object_id": "ZTF_ANOMALY_TDE_0014",
+          "nearest_known_class": "SN_Ia",
+          "nearest_distance": 25.107666015625,
+          "dist_to_SN_Ia": 25.107666015625,
+          "dist_to_SN_II": 32.09169006347656,
+          "dist_to_Stellar_Flare": 31.222318649291992,
+          "dist_to_Variable_Star": 26.586576461791992
+        },
+        {
+          "object_id": "ZTF_ANOMALY_TDE_0017",
+          "nearest_known_class": "Variable_Star",
+          "nearest_distance": 15.377243995666504,
+          "dist_to_SN_Ia": 16.4060001373291,
+          "dist_to_SN_II": 18.83005142211914,
+          "dist_to_Stellar_Flare": 35.9313850402832,
+          "dist_to_Variable_Star": 15.377243995666504
+        },
+        {
+          "object_id": "ZTF_ANOMALY_TDE_0020",
+          "nearest_known_class": "SN_II",
+          "nearest_distance": 21.360061645507812,
+          "dist_to_SN_Ia": 25.15743064880371,
+          "dist_to_SN_II": 21.360061645507812,
+          "dist_to_Stellar_Flare": 42.967140197753906,
+          "dist_to_Variable_Star": 25.206100463867188
+        },
+        {
+          "object_id": "ZTF_ANOMALY_TDE_0023",
+          "nearest_known_class": "SN_Ia",
+          "nearest_distance": 15.805716514587402,
+          "dist_to_SN_Ia": 15.805716514587402,
+          "dist_to_SN_II": 24.615938186645508,
+          "dist_to_Stellar_Flare": 32.94887161254883,
+          "dist_to_Variable_Star": 18.433076858520508
+        },
+        {
+          "object_id": "ZTF_ANOMALY_TDE_0026",
+          "nearest_known_class": "SN_Ia",
+          "nearest_distance": 19.036945343017578,
+          "dist_to_SN_Ia": 19.036945343017578,
+          "dist_to_SN_II": 26.642148971557617,
+          "dist_to_Stellar_Flare": 34.18684768676758,
+          "dist_to_Variable_Star": 19.520769119262695
+        },
+        {
+          "object_id": "ZTF_ANOMALY_TDE_0029",
+          "nearest_known_class": "SN_Ia",
+          "nearest_distance": 20.427059173583984,
+          "dist_to_SN_Ia": 20.427059173583984,
+          "dist_to_SN_II": 20.575929641723633,
+          "dist_to_Stellar_Flare": 40.227569580078125,
+          "dist_to_Variable_Star": 20.877857208251953
+        }
+      ]
+    },
+    "between_class_distances": {
+      "SN_Ia": {
+        "SN_Ia": 0.0,
+        "SN_II": 16.833740234375,
+        "Stellar_Flare": 31.047222137451172,
+        "Variable_Star": 7.79014778137207
+      },
+      "SN_II": {
+        "SN_Ia": 16.833740234375,
+        "SN_II": 0.0,
+        "Stellar_Flare": 37.10539627075195,
+        "Variable_Star": 15.931939125061035
+      },
+      "Stellar_Flare": {
+        "SN_Ia": 31.047222137451172,
+        "SN_II": 37.10539627075195,
+        "Stellar_Flare": 0.0,
+        "Variable_Star": 32.46366882324219
+      },
+      "Variable_Star": {
+        "SN_Ia": 7.79014778137207,
+        "SN_II": 15.931939125061035,
+        "Stellar_Flare": 32.46366882324219,
+        "Variable_Star": 0.0
+      }
+    },
+    "within_class_distances": {
+      "SN_Ia": {
+        "n": 21,
+        "mean": 8.110788345336914,
+        "median": 8.070107460021973,
+        "std": 0.2804582118988037
+      },
+      "SN_II": {
+        "n": 21,
+        "mean": 7.974444389343262,
+        "median": 8.01345157623291,
+        "std": 0.2809884548187256
+      },
+      "Stellar_Flare": {
+        "n": 21,
+        "mean": 7.5538010597229,
+        "median": 7.518721580505371,
+        "std": 0.35602277517318726
+      },
+      "Variable_Star": {
+        "n": 21,
+        "mean": 7.845478534698486,
+        "median": 7.861814498901367,
+        "std": 0.21235020458698273
+      }
+    }
+  },
+  "lightcurve_geometry": {
+    "class_stats": {
+      "SN_Ia": {
+        "n": 5,
+        "mean": 7.682732677459716,
+        "median": 6.835440635681152,
+        "std": 1.9310271193324295,
+        "min": 5.750803470611572,
+        "max": 11.341588973999023
+      },
+      "SN_II": {
+        "n": 5,
+        "mean": 5.8262913703918455,
+        "median": 5.789659023284912,
+        "std": 0.7662918704224941,
+        "min": 4.7815022468566895,
+        "max": 7.015225887298584
+      },
+      "Stellar_Flare": {
+        "n": 5,
+        "mean": 8.486953353881836,
+        "median": 8.473053932189941,
+        "std": 0.5893144269618846,
+        "min": 7.7132649421691895,
+        "max": 9.20097827911377
+      },
+      "Variable_Star": {
+        "n": 5,
+        "mean": 6.963135051727295,
+        "median": 6.773245811462402,
+        "std": 1.0713832117957525,
+        "min": 5.691312313079834,
+        "max": 8.332626342773438
+      },
+      "LRN": {
+        "n": 10,
+        "mean": 8.269070959091186,
+        "median": 8.106152534484863,
+        "std": 1.3808408679117739,
+        "min": 5.852522850036621,
+        "max": 10.47325325012207
+      },
+      "SLSN": {
+        "n": 10,
+        "mean": 19.32992515563965,
+        "median": 19.261423110961914,
+        "std": 0.4655775992468381,
+        "min": 18.545143127441406,
+        "max": 20.42051124572754
+      },
+      "TDE": {
+        "n": 10,
+        "mean": 7.820937871932983,
+        "median": 7.738579988479614,
+        "std": 1.0999261984711874,
+        "min": 6.253672122955322,
+        "max": 10.432616233825684
+      }
+    },
+    "between_class_distances": {
+      "SN_Ia": {
+        "SN_Ia": 0.0,
+        "SN_II": 10.108203887939453,
+        "Stellar_Flare": 19.957963943481445,
+        "Variable_Star": 3.697312355041504
+      },
+      "SN_II": {
+        "SN_Ia": 10.108203887939453,
+        "SN_II": 0.0,
+        "Stellar_Flare": 27.32194709777832,
+        "Variable_Star": 7.200278282165527
+      },
+      "Stellar_Flare": {
+        "SN_Ia": 19.957963943481445,
+        "SN_II": 27.32194709777832,
+        "Stellar_Flare": 0.0,
+        "Variable_Star": 22.323997497558594
+      },
+      "Variable_Star": {
+        "SN_Ia": 3.697312355041504,
+        "SN_II": 7.200278282165527,
+        "Stellar_Flare": 22.323997497558594,
+        "Variable_Star": 0.0
+      }
+    },
+    "within_class_distances": {
+      "SN_Ia": {
+        "n": 21,
+        "mean": 5.834617614746094,
+        "median": 5.874812126159668,
+        "std": 0.6315627694129944
+      },
+      "SN_II": {
+        "n": 21,
+        "mean": 5.009765625,
+        "median": 4.871347427368164,
+        "std": 0.6288949251174927
+      },
+      "Stellar_Flare": {
+        "n": 21,
+        "mean": 5.512430191040039,
+        "median": 5.330198764801025,
+        "std": 0.5870243906974792
+      },
+      "Variable_Star": {
+        "n": 21,
+        "mean": 5.588387489318848,
+        "median": 5.585075855255127,
+        "std": 0.5747153162956238
+      }
+    }
+  },
+  "image_geometry": {
+    "class_stats": {
+      "SN_Ia": {
+        "n": 5,
+        "mean": 14.783596420288086,
+        "median": 14.8816499710083,
+        "std": 1.6415780288446236,
+        "min": 12.192761421203613,
+        "max": 17.115644454956055
+      },
+      "SN_II": {
+        "n": 5,
+        "mean": 13.370891761779784,
+        "median": 13.213555335998535,
+        "std": 1.9147625237540098,
+        "min": 11.644098281860352,
+        "max": 16.942975997924805
+      },
+      "Stellar_Flare": {
+        "n": 5,
+        "mean": 13.677564811706542,
+        "median": 14.043001174926758,
+        "std": 1.4748238616668763,
+        "min": 11.664077758789062,
+        "max": 15.844123840332031
+      },
+      "Variable_Star": {
+        "n": 5,
+        "mean": 13.258055877685546,
+        "median": 13.209650993347168,
+        "std": 1.0350576989573077,
+        "min": 12.056970596313477,
+        "max": 14.792283058166504
+      },
+      "LRN": {
+        "n": 10,
+        "mean": 14.0935697555542,
+        "median": 13.867166996002197,
+        "std": 1.229390116584586,
+        "min": 12.343921661376953,
+        "max": 17.135662078857422
+      },
+      "SLSN": {
+        "n": 10,
+        "mean": 13.238840484619141,
+        "median": 13.60024356842041,
+        "std": 1.0890126594183123,
+        "min": 11.788268089294434,
+        "max": 15.11825180053711
+      },
+      "TDE": {
+        "n": 10,
+        "mean": 14.073710727691651,
+        "median": 13.792174816131592,
+        "std": 1.203386958516986,
+        "min": 12.550238609313965,
+        "max": 17.055675506591797
+      }
+    },
+    "between_class_distances": {
+      "SN_Ia": {
+        "SN_Ia": 0.0,
+        "SN_II": 5.127425193786621,
+        "Stellar_Flare": 4.422825336456299,
+        "Variable_Star": 4.997786045074463
+      },
+      "SN_II": {
+        "SN_Ia": 5.127425193786621,
+        "SN_II": 0.0,
+        "Stellar_Flare": 5.057319164276123,
+        "Variable_Star": 6.2975311279296875
+      },
+      "Stellar_Flare": {
+        "SN_Ia": 4.422825336456299,
+        "SN_II": 5.057319164276123,
+        "Stellar_Flare": 0.0,
+        "Variable_Star": 5.536694049835205
+      },
+      "Variable_Star": {
+        "SN_Ia": 4.997786045074463,
+        "SN_II": 6.2975311279296875,
+        "Stellar_Flare": 5.536694049835205,
+        "Variable_Star": 0.0
+      }
+    },
+    "within_class_distances": {
+      "SN_Ia": {
+        "n": 21,
+        "mean": 7.7293314933776855,
+        "median": 7.7599005699157715,
+        "std": 0.25586989521980286
+      },
+      "SN_II": {
+        "n": 21,
+        "mean": 7.807185649871826,
+        "median": 7.766988754272461,
+        "std": 0.22564660012722015
+      },
+      "Stellar_Flare": {
+        "n": 21,
+        "mean": 7.683775424957275,
+        "median": 7.735810279846191,
+        "std": 0.2557421326637268
+      },
+      "Variable_Star": {
+        "n": 21,
+        "mean": 7.612870216369629,
+        "median": 7.680717468261719,
+        "std": 0.2627619504928589
+      }
+    }
+  }
+}

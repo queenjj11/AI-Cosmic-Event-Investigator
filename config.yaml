@@ -1,0 +1,127 @@
+# AI Cosmic Event Investigator (ACEI) Configuration
+# Defines survey parameters, model architecture, anomaly thresholds, RAG settings, and active learning actions
+
+project:
+  name: "AI-Cosmic-Event-Investigator"
+  version: "1.0.0"
+  seed: 42
+  device: "auto"  # "cuda", "mps", or "cpu"
+
+data:
+  raw_dir: "data/raw"
+  processed_dir: "data/processed"
+  splits_dir: "data/splits"
+  bands: ["g", "r", "i"]
+  max_sequence_length: 50
+  image_size: [64, 64]
+  image_channels: 3  # science, template, difference
+  known_classes:
+    - "SN_Ia"          # Type Ia Supernova
+    - "SN_II"          # Type II Core-collapse Supernova
+    - "Stellar_Flare"  # M-dwarf / Stellar flare
+    - "Variable_Star"  # RR Lyrae / Cepheid
+  held_out_anomaly_classes:
+    - "LRN"            # Luminous Red Nova (rare merger)
+    - "SLSN"           # Superluminous Supernova (extreme magnetar/pair-instability)
+    - "TDE"            # Tidal Disruption Event
+  split_ratios:
+    train: 0.70
+    val: 0.15
+    test: 0.15
+
+features:
+  lightcurve_features:
+    - "amplitude"
+    - "period"
+    - "stetson_j"
+    - "stetson_k"
+    - "skewness"
+    - "kurtosis"
+    - "rise_time"
+    - "decay_time"
+    - "color_g_minus_r"
+  image_features:
+    - "fwhm"
+    - "ellipticity"
+    - "concentration_index"
+    - "aperture_flux_ratio"
+
+models:
+  image_encoder:
+    backbone: "resnet18"
+    pretrained: true
+    embedding_dim: 128
+    dropout: 0.2
+
+  lightcurve_encoder:
+    d_model: 128
+    nhead: 4
+    num_layers: 3
+    dim_feedforward: 256
+    dropout: 0.1
+    time_embed_dim: 32
+
+  fusion:
+    method: "cross_attention"  # "concat_mlp" or "cross_attention"
+    fused_dim: 256
+    dropout: 0.2
+
+  training:
+    batch_size: 32
+    learning_rate: 0.0005
+    weight_decay: 0.0001
+    epochs: 40
+    early_stopping_patience: 8
+
+anomaly_detection:
+  autoencoder:
+    latent_dim: 64
+    hidden_dims: [128, 96]
+  mahalanobis:
+    shrinkage: "ledoit_wolf"
+  energy_score:
+    temperature: 1.0
+  ensemble:
+    weights:
+      autoencoder: 0.40
+      mahalanobis: 0.35
+      energy: 0.25
+    anomaly_threshold: 0.65  # Flag as anomaly if ensemble score > 0.65
+
+knowledge_base:
+  papers_dir: "knowledge_base/papers"
+  catalogs_dir: "knowledge_base/catalogs"
+  chunk_size: 500
+  chunk_overlap: 50
+  top_k: 4
+
+investigator:
+  llm_provider: "mock"  # "openai", "anthropic", "gemini", or "mock"
+  model_name: "claude-3-5-sonnet-20241022"
+  temperature: 0.2
+  calibration:
+    method: "isotonic"  # "isotonic", "platt", or "temperature"
+
+recommender:
+  actions:
+    - id: "reobserve_r_band_2h"
+      name: "Immediate Re-observation in r-band (2h)"
+      band: "r"
+      delay_hours: 2
+      cost: 1.0
+    - id: "reobserve_g_band_tomorrow"
+      name: "Follow-up Photometry in g-band (24h)"
+      band: "g"
+      delay_hours: 24
+      cost: 0.8
+    - id: "request_nir_photometry"
+      name: "Target-of-Opportunity NIR (J/H/K) Photometry"
+      band: "NIR"
+      delay_hours: 12
+      cost: 2.5
+    - id: "request_optical_spectroscopy"
+      name: "Target-of-Opportunity Optical Spectroscopy"
+      band: "optical_spec"
+      delay_hours: 6
+      cost: 5.0
+  cost_penalty_lambda: 0.1

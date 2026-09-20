@@ -1,0 +1,181 @@
+candidate_id,ztf_designation,astrophysical_class,dataset_role,coverage_status,benchmark_eligible,eligibility_reason
+CAND_CV_001,ZTF17aaaemzh,Cataclysmic_Variable,ood_anomaly,COVERAGE_SUFFICIENT,True,"ELIGIBLE: Satisfies provenance, unambiguous coordinate match (<=1.5""), >=20 tokens, <=60% padding, >=2 filters"
+CAND_CV_002,ZTF18abdlywu,Cataclysmic_Variable,ood_anomaly,COVERAGE_SUFFICIENT,True,"ELIGIBLE: Satisfies provenance, unambiguous coordinate match (<=1.5""), >=20 tokens, <=60% padding, >=2 filters"
+CAND_CV_003,ZTF18abgopgb,Cataclysmic_Variable,ood_anomaly,COVERAGE_SUFFICIENT,True,"ELIGIBLE: Satisfies provenance, unambiguous coordinate match (<=1.5""), >=20 tokens, <=60% padding, >=2 filters"
+CAND_CV_004,ZTF17aaawpsz,Cataclysmic_Variable,ood_anomaly,COVERAGE_LIMITED,False,"COVERAGE_LIMITED: valid_tokens=9<20, padding_fraction=0.82>0.60"
+CAND_CV_005,ZTF18acgplgw,Cataclysmic_Variable,ood_anomaly,COVERAGE_SUFFICIENT,True,"ELIGIBLE: Satisfies provenance, unambiguous coordinate match (<=1.5""), >=20 tokens, <=60% padding, >=2 filters"
+CAND_CV_006,ZTF18aabeymw,Cataclysmic_Variable,ood_anomaly,COVERAGE_SUFFICIENT,True,"ELIGIBLE: Satisfies provenance, unambiguous coordinate match (<=1.5""), >=20 tokens, <=60% padding, >=2 filters"
+CAND_CV_007,ZTF18abtmzoi,Cataclysmic_Variable,ood_anomaly,COVERAGE_SUFFICIENT,True,"ELIGIBLE: Satisfies provenance, unambiguous coordinate match (<=1.5""), >=20 tokens, <=60% padding, >=2 filters"
+CAND_CV_008,ZTF17aaaslud,Cataclysmic_Variable,ood_anomaly,COVERAGE_SUFFICIENT,True,"ELIGIBLE: Satisfies provenance, unambiguous coordinate match (<=1.5""), >=20 tokens, <=60% padding, >=2 filters"
+CAND_CV_009,ZTF17aaarlrs,Cataclysmic_Variable,ood_anomaly,COVERAGE_SUFFICIENT,True,"ELIGIBLE: Satisfies provenance, unambiguous coordinate match (<=1.5""), >=20 tokens, <=60% padding, >=2 filters"
+CAND_CV_010,ZTF18abscxct,Cataclysmic_Variable,ood_anomaly,COVERAGE_SUFFICIENT,True,"ELIGIBLE: Satisfies provenance, unambiguous coordinate match (<=1.5""), >=20 tokens, <=60% padding, >=2 filters"
+CAND_CV_011,ZTF17aaacdos,Cataclysmic_Variable,ood_anomaly,COVERAGE_SUFFICIENT,True,"ELIGIBLE: Satisfies provenance, unambiguous coordinate match (<=1.5""), >=20 tokens, <=60% padding, >=2 filters"
+CAND_CV_012,ZTF17aacucfy,Cataclysmic_Variable,ood_anomaly,COVERAGE_SUFFICIENT,True,"ELIGIBLE: Satisfies provenance, unambiguous coordinate match (<=1.5""), >=20 tokens, <=60% padding, >=2 filters"
+CAND_CV_013,ZTF17aaavfwx,Cataclysmic_Variable,ood_anomaly,COVERAGE_SUFFICIENT,True,"ELIGIBLE: Satisfies provenance, unambiguous coordinate match (<=1.5""), >=20 tokens, <=60% padding, >=2 filters"
+CAND_CV_014,ZTF17aadaxwu,Cataclysmic_Variable,ood_anomaly,COVERAGE_SUFFICIENT,True,"ELIGIBLE: Satisfies provenance, unambiguous coordinate match (<=1.5""), >=20 tokens, <=60% padding, >=2 filters"
+CAND_CV_015,ZTF18abwsres,Cataclysmic_Variable,ood_anomaly,COVERAGE_LIMITED,False,"COVERAGE_LIMITED: valid_tokens=17<20, padding_fraction=0.66>0.60"
+CAND_FieldStar_001,Gaia_DR3_2028862462418379264,Unclassified Field Star,control,COVERAGE_SUFFICIENT,True,"ELIGIBLE: Satisfies provenance, unambiguous coordinate match (<=1.5""), >=20 tokens, <=60% padding, >=2 filters"
+CAND_FieldStar_002,Gaia_DR3_2028862462419331200,Unclassified Field Star,control,COVERAGE_SUFFICIENT,True,"ELIGIBLE: Satisfies provenance, unambiguous coordinate match (<=1.5""), >=20 tokens, <=60% padding, >=2 filters"
+CAND_FieldStar_003,Gaia_DR3_2028862462419332224,Unclassified Field Star,control,COVERAGE_SUFFICIENT,True,"ELIGIBLE: Satisfies provenance, unambiguous coordinate match (<=1.5""), >=20 tokens, <=60% padding, >=2 filters"
+CAND_FieldStar_004,Gaia_DR3_2028862462419332608,Unclassified Field Star,control,COVERAGE_SUFFICIENT,True,"ELIGIBLE: Satisfies provenance, unambiguous coordinate match (<=1.5""), >=20 tokens, <=60% padding, >=2 filters"
+CAND_FieldStar_005,Gaia_DR3_2028862462419639552,Unclassified Field Star,control,COVERAGE_SUFFICIENT,True,"ELIGIBLE: Satisfies provenance, unambiguous coordinate match (<=1.5""), >=20 tokens, <=60% padding, >=2 filters"
+CAND_FieldStar_006,Gaia_DR3_2028862462419639936,Unclassified Field Star,control,COVERAGE_SUFFICIENT,True,"ELIGIBLE: Satisfies provenance, unambiguous coordinate match (<=1.5""), >=20 tokens, <=60% padding, >=2 filters"
+CAND_FieldStar_007,Gaia_DR3_2028862462419640320,Unclassified Field Star,control,COVERAGE_SUFFICIENT,True,"ELIGIBLE: Satisfies provenance, unambiguous coordinate match (<=1.5""), >=20 tokens, <=60% padding, >=2 filters"
+CAND_FieldStar_008,Gaia_DR3_2028862462420189056,Unclassified Field Star,control,COVERAGE_SUFFICIENT,True,"ELIGIBLE: Satisfies provenance, unambiguous coordinate match (<=1.5""), >=20 tokens, <=60% padding, >=2 filters"
+CAND_FieldStar_009,Gaia_DR3_2028862462420189696,Unclassified Field Star,control,COVERAGE_SUFFICIENT,True,"ELIGIBLE: Satisfies provenance, unambiguous coordinate match (<=1.5""), >=20 tokens, <=60% padding, >=2 filters"
+CAND_FieldStar_010,Gaia_DR3_2028862462420291072,Unclassified Field Star,control,COVERAGE_LIMITED,False,"COVERAGE_LIMITED: valid_tokens=15<20, padding_fraction=0.70>0.60"
+CAND_FieldStar_011,Gaia_DR3_2028862462433019392,Unclassified Field Star,control,COVERAGE_SUFFICIENT,True,"ELIGIBLE: Satisfies provenance, unambiguous coordinate match (<=1.5""), >=20 tokens, <=60% padding, >=2 filters"
+CAND_FieldStar_012,Gaia_DR3_2028862526809724672,Unclassified Field Star,control,COVERAGE_SUFFICIENT,True,"ELIGIBLE: Satisfies provenance, unambiguous coordinate match (<=1.5""), >=20 tokens, <=60% padding, >=2 filters"
+CAND_FieldStar_013,Gaia_DR3_2028862526809724928,Unclassified Field Star,control,COVERAGE_SUFFICIENT,True,"ELIGIBLE: Satisfies provenance, unambiguous coordinate match (<=1.5""), >=20 tokens, <=60% padding, >=2 filters"
+CAND_FieldStar_014,Gaia_DR3_2028862526809725568,Unclassified Field Star,control,COVERAGE_SUFFICIENT,True,"ELIGIBLE: Satisfies provenance, unambiguous coordinate match (<=1.5""), >=20 tokens, <=60% padding, >=2 filters"
+CAND_FieldStar_015,Gaia_DR3_2028862526809726336,Unclassified Field Star,control,COVERAGE_SUFFICIENT,True,"ELIGIBLE: Satisfies provenance, unambiguous coordinate match (<=1.5""), >=20 tokens, <=60% padding, >=2 filters"
+CAND_SLSN_001,ZTF18abxbmqh,SLSN-II,ood_anomaly,COVERAGE_LIMITED,False,"COVERAGE_LIMITED: valid_tokens=11<20, padding_fraction=0.78>0.60"
+CAND_SLSN_002,ZTF18achdidy,SLSN-I,ood_anomaly,COVERAGE_SUFFICIENT,True,"ELIGIBLE: Satisfies provenance, unambiguous coordinate match (<=1.5""), >=20 tokens, <=60% padding, >=2 filters"
+CAND_SLSN_003,ZTF18acnnevs,SLSN-II,ood_anomaly,AMBIGUOUS_ASSOCIATION,False,AMBIGUOUS_ASSOCIATION: Ambiguous distinct candidate sources in passband 'zg': OID 1823103400007095 (0.427'') vs OID 789112300013107 (0.543''). Mutual separation=0.258''. Separation gap (0.116'') < engineering heuristic threshold (0.3'').
+CAND_SLSN_004,ZTF18acsxwdi,SLSN-II,ood_anomaly,AMBIGUOUS_ASSOCIATION,False,AMBIGUOUS_ASSOCIATION: Ambiguous distinct candidate sources in passband 'zg': OID 602114100024108 (1.088'') vs OID 1647106100008246 (1.096''). Mutual separation=1.153''. Separation gap (0.008'') < engineering heuristic threshold (0.3'').
+CAND_SLSN_005,ZTF18acyxnyw,SLSN-I,ood_anomaly,COVERAGE_SUFFICIENT,True,"ELIGIBLE: Satisfies provenance, unambiguous coordinate match (<=1.5""), >=20 tokens, <=60% padding, >=2 filters"
+CAND_SLSN_006,ZTF19aaadwfi,SLSN-II,ood_anomaly,COVERAGE_LIMITED,False,"COVERAGE_LIMITED: valid_tokens=16<20, padding_fraction=0.68>0.60"
+CAND_SLSN_007,ZTF19aafljiq,SLSN-II,ood_anomaly,COVERAGE_SUFFICIENT,True,"ELIGIBLE: Satisfies provenance, unambiguous coordinate match (<=1.5""), >=20 tokens, <=60% padding, >=2 filters"
+CAND_SLSN_008,ZTF19aakphow,SLSN-II,ood_anomaly,COVERAGE_LIMITED,False,"COVERAGE_LIMITED: valid_tokens=8<20, padding_fraction=0.84>0.60, available_filters=zr<2"
+CAND_SLSN_009,ZTF19aanesgt,SLSN-I,ood_anomaly,COVERAGE_SUFFICIENT,True,"ELIGIBLE: Satisfies provenance, unambiguous coordinate match (<=1.5""), >=20 tokens, <=60% padding, >=2 filters"
+CAND_SLSN_010,ZTF19aamrais,SLSN-II,ood_anomaly,COVERAGE_SUFFICIENT,True,"ELIGIBLE: Satisfies provenance, unambiguous coordinate match (<=1.5""), >=20 tokens, <=60% padding, >=2 filters"
+CAND_SLSN_011,ZTF19aalbrgu,SLSN-II,ood_anomaly,AMBIGUOUS_ASSOCIATION,False,AMBIGUOUS_ASSOCIATION: Ambiguous distinct candidate sources in passband 'zr': OID 1765211100008383 (0.172'') vs OID 765202100038246 (0.349''). Mutual separation=0.191''. Separation gap (0.177'') < engineering heuristic threshold (0.3'').
+CAND_SLSN_012,ZTF19aarphwc,SLSN-I,ood_anomaly,COVERAGE_LIMITED,False,COVERAGE_LIMITED: available_filters=zr<2
+CAND_SLSN_013,ZTF19aavouyw,SLSN-I,ood_anomaly,COVERAGE_LIMITED,False,"COVERAGE_LIMITED: valid_tokens=6<20, padding_fraction=0.88>0.60, available_filters=zr<2"
+CAND_SLSN_014,ZTF19aawfbtg,SLSN-I,ood_anomaly,COVERAGE_SUFFICIENT,True,"ELIGIBLE: Satisfies provenance, unambiguous coordinate match (<=1.5""), >=20 tokens, <=60% padding, >=2 filters"
+CAND_SLSN_015,ZTF19abfvnns,SLSN-I,ood_anomaly,AMBIGUOUS_ASSOCIATION,False,AMBIGUOUS_ASSOCIATION: Ambiguous distinct candidate sources in passband 'zg': OID 1773105300003319 (0.262'') vs OID 694115300005262 (0.467''). Mutual separation=0.190''. Separation gap (0.205'') < engineering heuristic threshold (0.3'').
+CAND_SLSN_016,ZTF19abpbopt,SLSN-I,ood_anomaly,COVERAGE_SUFFICIENT,True,"ELIGIBLE: Satisfies provenance, unambiguous coordinate match (<=1.5""), >=20 tokens, <=60% padding, >=2 filters"
+CAND_SLSN_017,ZTF19abnacvf,SLSN-I,ood_anomaly,INSUFFICIENT_OBSERVATIONS,False,INSUFFICIENT_OBSERVATIONS: only 3 valid tokens (<5 required)
+CAND_SLSN_018,ZTF19abpvbzf,SLSN-II,ood_anomaly,COVERAGE_LIMITED,False,"COVERAGE_LIMITED: valid_tokens=17<20, padding_fraction=0.66>0.60"
+CAND_SLSN_019,ZTF19abxekxi,SLSN-II,ood_anomaly,AMBIGUOUS_ASSOCIATION,False,AMBIGUOUS_ASSOCIATION: Ambiguous distinct candidate sources in passband 'zg': OID 388101200017465 (1.297'') vs OID 1381110100005379 (1.314''). Mutual separation=0.191''. Separation gap (0.017'') < engineering heuristic threshold (0.3'').
+CAND_SLSN_020,ZTF19abxgmzr,SLSN-I,ood_anomaly,RETRIEVAL_FAILED,False,NO_DATA: Zero observations in IRSA cone
+CAND_SNII_001,ZTF18aapifti,SN IIP,in_distribution,COVERAGE_SUFFICIENT,True,"ELIGIBLE: Satisfies provenance, unambiguous coordinate match (<=1.5""), >=20 tokens, <=60% padding, >=2 filters"
+CAND_SNII_002,ZTF18aaqkoyr,SN II,in_distribution,COVERAGE_SUFFICIENT,True,"ELIGIBLE: Satisfies provenance, unambiguous coordinate match (<=1.5""), >=20 tokens, <=60% padding, >=2 filters"
+CAND_SNII_003,ZTF18aasxvsg,SN II,in_distribution,AMBIGUOUS_ASSOCIATION,False,AMBIGUOUS_ASSOCIATION: Ambiguous distinct candidate sources in passband 'zr': OID 676216100012911 (0.454'') vs OID 1718212300023984 (0.516''). Mutual separation=0.171''. Separation gap (0.063'') < engineering heuristic threshold (0.3'').
+CAND_SNII_004,ZTF18aavqdyq,SN II,in_distribution,COVERAGE_SUFFICIENT,True,"ELIGIBLE: Satisfies provenance, unambiguous coordinate match (<=1.5""), >=20 tokens, <=60% padding, >=2 filters"
+CAND_SNII_005,ZTF18aawyjjq,SN II,in_distribution,COVERAGE_LIMITED,False,"COVERAGE_LIMITED: valid_tokens=17<20, padding_fraction=0.66>0.60"
+CAND_SNII_006,ZTF18aaxnqjb,SN II,in_distribution,AMBIGUOUS_ASSOCIATION,False,AMBIGUOUS_ASSOCIATION: Ambiguous distinct candidate sources in passband 'zg': OID 1624106300010837 (1.026'') vs OID 579115300026819 (1.252''). Mutual separation=0.276''. Separation gap (0.226'') < engineering heuristic threshold (0.3'').
+CAND_SNII_007,ZTF18aatlfus,SN IIP,in_distribution,AMBIGUOUS_ASSOCIATION,False,AMBIGUOUS_ASSOCIATION: Ambiguous distinct candidate sources in passband 'zg': OID 634114400026612 (0.671'') vs OID 1678105400007985 (0.915''). Mutual separation=0.370''. Separation gap (0.244'') < engineering heuristic threshold (0.3'').
+CAND_SNII_008,ZTF18abbpxik,SN II,in_distribution,AMBIGUOUS_ASSOCIATION,False,AMBIGUOUS_ASSOCIATION: Ambiguous distinct candidate sources in passband 'zr': OID 531202400038588 (0.646'') vs OID 480216100025782 (0.773''). Mutual separation=0.393''. Separation gap (0.127'') < engineering heuristic threshold (0.3'').
+CAND_SNII_009,ZTF18abckutn,SN IIP,in_distribution,COVERAGE_SUFFICIENT,True,"ELIGIBLE: Satisfies provenance, unambiguous coordinate match (<=1.5""), >=20 tokens, <=60% padding, >=2 filters"
+CAND_SNII_010,ZTF18abcezmh,SN II,in_distribution,COVERAGE_SUFFICIENT,True,"ELIGIBLE: Satisfies provenance, unambiguous coordinate match (<=1.5""), >=20 tokens, <=60% padding, >=2 filters"
+CAND_SNII_011,ZTF18abceakp,SN II,in_distribution,AMBIGUOUS_ASSOCIATION,False,AMBIGUOUS_ASSOCIATION: Ambiguous distinct candidate sources in passband 'zi': OID 845303400032877 (0.347'') vs OID 821313200001490 (0.559''). Mutual separation=0.184''. Separation gap (0.212'') < engineering heuristic threshold (0.3'').
+CAND_SNII_012,ZTF18abcpmwh,SN IIP,in_distribution,AMBIGUOUS_ASSOCIATION,False,AMBIGUOUS_ASSOCIATION: Ambiguous distinct candidate sources in passband 'zg': OID 1715111300015996 (0.731'') vs OID 716101300028913 (0.754''). Mutual separation=0.173''. Separation gap (0.023'') < engineering heuristic threshold (0.3'').
+CAND_SNII_013,ZTF18abcptmt,SN II,in_distribution,COVERAGE_SUFFICIENT,True,"ELIGIBLE: Satisfies provenance, unambiguous coordinate match (<=1.5""), >=20 tokens, <=60% padding, >=2 filters"
+CAND_SNII_014,ZTF18abcyhju,SN II,in_distribution,AMBIGUOUS_ASSOCIATION,False,AMBIGUOUS_ASSOCIATION: Ambiguous distinct candidate sources in passband 'zr': OID 625214200033815 (0.841'') vs OID 1670208200021971 (0.849''). Mutual separation=0.156''. Separation gap (0.008'') < engineering heuristic threshold (0.3'').
+CAND_SNII_015,ZTF18abdbysy,SN II,in_distribution,COVERAGE_LIMITED,False,"COVERAGE_LIMITED: valid_tokens=11<20, padding_fraction=0.78>0.60, available_filters=zi<2"
+CAND_SNII_016,ZTF18abdrbqp,SN IIP,in_distribution,AMBIGUOUS_ASSOCIATION,False,AMBIGUOUS_ASSOCIATION: Ambiguous distinct candidate sources in passband 'zg': OID 1716108100026273 (0.582'') vs OID 674116100013291 (0.754''). Mutual separation=0.235''. Separation gap (0.172'') < engineering heuristic threshold (0.3'').
+CAND_SNII_017,ZTF18abcfdzu,SN IIP,in_distribution,AMBIGUOUS_ASSOCIATION,False,AMBIGUOUS_ASSOCIATION: Ambiguous distinct candidate sources in passband 'zg': OID 793105100022201 (0.547'') vs OID 794108200005886 (0.768''). Mutual separation=1.040''. Separation gap (0.220'') < engineering heuristic threshold (0.3'').
+CAND_SNII_018,ZTF18abeajml,SN II,in_distribution,COVERAGE_SUFFICIENT,True,"ELIGIBLE: Satisfies provenance, unambiguous coordinate match (<=1.5""), >=20 tokens, <=60% padding, >=2 filters"
+CAND_SNII_019,ZTF18abesqnb,SN II,in_distribution,COVERAGE_LIMITED,False,COVERAGE_LIMITED: available_filters=zi<2
+CAND_SNII_020,ZTF18abffyqp,SN II,in_distribution,COVERAGE_SUFFICIENT,True,"ELIGIBLE: Satisfies provenance, unambiguous coordinate match (<=1.5""), >=20 tokens, <=60% padding, >=2 filters"
+CAND_SNII_021,ZTF18abfzixe,SN IIP,in_distribution,COVERAGE_SUFFICIENT,True,"ELIGIBLE: Satisfies provenance, unambiguous coordinate match (<=1.5""), >=20 tokens, <=60% padding, >=2 filters"
+CAND_SNII_022,ZTF18abgrbjb,SN IIb,in_distribution,COVERAGE_SUFFICIENT,True,"ELIGIBLE: Satisfies provenance, unambiguous coordinate match (<=1.5""), >=20 tokens, <=60% padding, >=2 filters"
+CAND_SNII_023,ZTF18abfzfcv,SN IIb,in_distribution,AMBIGUOUS_ASSOCIATION,False,AMBIGUOUS_ASSOCIATION: Ambiguous distinct candidate sources in passband 'zg': OID 1760114300027084 (0.499'') vs OID 761108200023628 (0.695''). Mutual separation=0.863''. Separation gap (0.196'') < engineering heuristic threshold (0.3'').
+CAND_SNII_024,ZTF18abimhfu,SN II,in_distribution,COVERAGE_SUFFICIENT,True,"ELIGIBLE: Satisfies provenance, unambiguous coordinate match (<=1.5""), >=20 tokens, <=60% padding, >=2 filters"
+CAND_SNII_025,ZTF22aamjqvc,SN II,in_distribution,AMBIGUOUS_ASSOCIATION,False,AMBIGUOUS_ASSOCIATION: Ambiguous distinct candidate sources in passband 'zr': OID 580214400011443 (0.706'') vs OID 1626208300032725 (0.865''). Mutual separation=0.163''. Separation gap (0.159'') < engineering heuristic threshold (0.3'').
+CAND_SNII_026,ZTF18abokyfk,SN II,in_distribution,AMBIGUOUS_ASSOCIATION,False,AMBIGUOUS_ASSOCIATION: Ambiguous distinct candidate sources in passband 'zg': OID 1773113200015865 (0.467'') vs OID 1735116200029204 (0.550''). Mutual separation=0.176''. Separation gap (0.084'') < engineering heuristic threshold (0.3'').
+CAND_SNII_027,ZTF18abojpnr,SN IIb,in_distribution,COVERAGE_SUFFICIENT,True,"ELIGIBLE: Satisfies provenance, unambiguous coordinate match (<=1.5""), >=20 tokens, <=60% padding, >=2 filters"
+CAND_SNII_028,ZTF18abrlljc,SN IIP,in_distribution,COVERAGE_SUFFICIENT,True,"ELIGIBLE: Satisfies provenance, unambiguous coordinate match (<=1.5""), >=20 tokens, <=60% padding, >=2 filters"
+CAND_SNII_029,ZTF20acfkzcg,SN IIP,in_distribution,COVERAGE_LIMITED,False,"COVERAGE_LIMITED: valid_tokens=5<20, padding_fraction=0.90>0.60, available_filters=zg<2"
+CAND_SNII_030,ZTF18abqyvzy,SN II,in_distribution,COVERAGE_SUFFICIENT,True,"ELIGIBLE: Satisfies provenance, unambiguous coordinate match (<=1.5""), >=20 tokens, <=60% padding, >=2 filters"
+CAND_SNII_031,ZTF18acgvgiq,SN II,in_distribution,COVERAGE_LIMITED,False,"COVERAGE_LIMITED: valid_tokens=19<20, padding_fraction=0.62>0.60"
+CAND_SNII_032,ZTF18abvvmdf,SN II,in_distribution,RETRIEVAL_FAILED,False,NO_DATA: Zero observations in IRSA cone
+CAND_SNII_033,ZTF18abzrgim,SN II,in_distribution,COVERAGE_LIMITED,False,"COVERAGE_LIMITED: valid_tokens=7<20, padding_fraction=0.86>0.60, available_filters=zg<2"
+CAND_SNII_034,ZTF18acbwasc,SN IIP,in_distribution,RETRIEVAL_FAILED,False,NO_DATA: Zero observations in IRSA cone
+CAND_SNII_035,ZTF18accnmri,SN IIP,in_distribution,COVERAGE_LIMITED,False,"COVERAGE_LIMITED: valid_tokens=18<20, padding_fraction=0.64>0.60"
+CAND_SNII_036,ZTF18acbwaxk,SN II,in_distribution,COVERAGE_SUFFICIENT,True,"ELIGIBLE: Satisfies provenance, unambiguous coordinate match (<=1.5""), >=20 tokens, <=60% padding, >=2 filters"
+CAND_SNII_037,ZTF18acbuemc,SN II,in_distribution,INSUFFICIENT_OBSERVATIONS,False,INSUFFICIENT_OBSERVATIONS: only 2 valid tokens (<5 required)
+CAND_SNII_038,ZTF18acbzvpg,SN IIb,in_distribution,INSUFFICIENT_OBSERVATIONS,False,INSUFFICIENT_OBSERVATIONS: only 4 valid tokens (<5 required)
+CAND_SNII_039,ZTF18accmkud,SN II,in_distribution,COVERAGE_LIMITED,False,"COVERAGE_LIMITED: valid_tokens=17<20, padding_fraction=0.66>0.60"
+CAND_SNII_040,ZTF18acebssa,SN II,in_distribution,COVERAGE_LIMITED,False,"COVERAGE_LIMITED: valid_tokens=14<20, padding_fraction=0.72>0.60"
+CAND_SNIa_001,ZTF21acipofv,SN Ia,in_distribution,INSUFFICIENT_OBSERVATIONS,False,INSUFFICIENT_OBSERVATIONS: only 2 valid tokens (<5 required)
+CAND_SNIa_002,ZTF20aakyqlh,SN Ia,in_distribution,COVERAGE_LIMITED,False,"COVERAGE_LIMITED: valid_tokens=7<20, padding_fraction=0.86>0.60"
+CAND_SNIa_003,ZTF19acdgwhq,SN Ia,in_distribution,COVERAGE_SUFFICIENT,True,"ELIGIBLE: Satisfies provenance, unambiguous coordinate match (<=1.5""), >=20 tokens, <=60% padding, >=2 filters"
+CAND_SNIa_004,ZTF18aajpjdi,SN Ia,in_distribution,COVERAGE_SUFFICIENT,True,"ELIGIBLE: Satisfies provenance, unambiguous coordinate match (<=1.5""), >=20 tokens, <=60% padding, >=2 filters"
+CAND_SNIa_005,ZTF18aaqedfj,SN Ia,in_distribution,COVERAGE_SUFFICIENT,True,"ELIGIBLE: Satisfies provenance, unambiguous coordinate match (<=1.5""), >=20 tokens, <=60% padding, >=2 filters"
+CAND_SNIa_006,ZTF18aaqkqxi,SN Ia,in_distribution,COVERAGE_SUFFICIENT,True,"ELIGIBLE: Satisfies provenance, unambiguous coordinate match (<=1.5""), >=20 tokens, <=60% padding, >=2 filters"
+CAND_SNIa_007,ZTF18aarbgdn,SN Ia,in_distribution,COVERAGE_SUFFICIENT,True,"ELIGIBLE: Satisfies provenance, unambiguous coordinate match (<=1.5""), >=20 tokens, <=60% padding, >=2 filters"
+CAND_SNIa_008,ZTF18aarcypa,SN Ia,in_distribution,COVERAGE_SUFFICIENT,True,"ELIGIBLE: Satisfies provenance, unambiguous coordinate match (<=1.5""), >=20 tokens, <=60% padding, >=2 filters"
+CAND_SNIa_009,ZTF18aaqskoy,SN Ia,in_distribution,COVERAGE_LIMITED,False,"COVERAGE_LIMITED: valid_tokens=19<20, padding_fraction=0.62>0.60"
+CAND_SNIa_010,ZTF18aarmnnd,SN Ia,in_distribution,AMBIGUOUS_ASSOCIATION,False,AMBIGUOUS_ASSOCIATION: Ambiguous distinct candidate sources in passband 'zg': OID 758108200005305 (1.141'') vs OID 1757115100025223 (1.301''). Mutual separation=0.862''. Separation gap (0.160'') < engineering heuristic threshold (0.3'').
+CAND_SNIa_011,ZTF18aaqqhis,SN Ia,in_distribution,COVERAGE_SUFFICIENT,True,"ELIGIBLE: Satisfies provenance, unambiguous coordinate match (<=1.5""), >=20 tokens, <=60% padding, >=2 filters"
+CAND_SNIa_012,ZTF18aasdted,SN Ia,in_distribution,AMBIGUOUS_ASSOCIATION,False,AMBIGUOUS_ASSOCIATION: Ambiguous distinct candidate sources in passband 'zg': OID 825102200017382 (0.614'') vs OID 1830110400017360 (0.660''). Mutual separation=0.175''. Separation gap (0.046'') < engineering heuristic threshold (0.3'').
+CAND_SNIa_013,ZTF18aauizcr,SN Ia,in_distribution,COVERAGE_SUFFICIENT,True,"ELIGIBLE: Satisfies provenance, unambiguous coordinate match (<=1.5""), >=20 tokens, <=60% padding, >=2 filters"
+CAND_SNIa_014,ZTF18aaunfqq,SN Ia,in_distribution,AMBIGUOUS_ASSOCIATION,False,AMBIGUOUS_ASSOCIATION: Ambiguous distinct candidate sources in passband 'zr': OID 721205300036444 (0.926'') vs OID 721205300000994 (1.001''). Mutual separation=1.600''. Separation gap (0.076'') < engineering heuristic threshold (0.3'').
+CAND_SNIa_015,ZTF18aaqcqvr,SN Ia,in_distribution,COVERAGE_SUFFICIENT,True,"ELIGIBLE: Satisfies provenance, unambiguous coordinate match (<=1.5""), >=20 tokens, <=60% padding, >=2 filters"
+CAND_SNIa_016,ZTF18aavrzxp,SN Ia,in_distribution,RETRIEVAL_FAILED,False,NO_DATA: Zero observations in IRSA cone
+CAND_SNIa_017,ZTF18aavrwhu,SN Ia,in_distribution,RETRIEVAL_FAILED,False,NO_DATA: Zero observations in IRSA cone
+CAND_SNIa_018,ZTF18aawjywv,SN Ia,in_distribution,AMBIGUOUS_ASSOCIATION,False,AMBIGUOUS_ASSOCIATION: Ambiguous distinct candidate sources in passband 'zg': OID 725115400030282 (0.624'') vs OID 725115400030286 (0.797''). Mutual separation=0.916''. Separation gap (0.173'') < engineering heuristic threshold (0.3'').
+CAND_SNIa_019,ZTF18aaxcntm,SN Ia,in_distribution,COVERAGE_LIMITED,False,"COVERAGE_LIMITED: valid_tokens=8<20, padding_fraction=0.84>0.60, available_filters=zi<2"
+CAND_SNIa_020,ZTF18aaxdrjn,SN Ia,in_distribution,AMBIGUOUS_ASSOCIATION,False,AMBIGUOUS_ASSOCIATION: Ambiguous distinct candidate sources in passband 'zi': OID 789309200021869 (0.540'') vs OID 790312200012148 (0.663''). Mutual separation=0.381''. Separation gap (0.123'') < engineering heuristic threshold (0.3'').
+CAND_SNIa_021,ZTF18aaxqyki,SN Ia,in_distribution,COVERAGE_LIMITED,False,"COVERAGE_LIMITED: valid_tokens=6<20, padding_fraction=0.88>0.60, available_filters=zi<2"
+CAND_SNIa_022,ZTF18aaxcfbt,SN Ia,in_distribution,COVERAGE_SUFFICIENT,True,"ELIGIBLE: Satisfies provenance, unambiguous coordinate match (<=1.5""), >=20 tokens, <=60% padding, >=2 filters"
+CAND_SNIa_023,ZTF18aaxsioa,SN Ia,in_distribution,COVERAGE_LIMITED,False,"COVERAGE_LIMITED: valid_tokens=10<20, padding_fraction=0.80>0.60, available_filters=zi<2"
+CAND_SNIa_024,ZTF18aayiahw,SN Ia,in_distribution,COVERAGE_LIMITED,False,"COVERAGE_LIMITED: valid_tokens=12<20, padding_fraction=0.76>0.60"
+CAND_SNIa_025,ZTF18aayjvve,SN Ia,in_distribution,COVERAGE_LIMITED,False,"COVERAGE_LIMITED: valid_tokens=8<20, padding_fraction=0.84>0.60, available_filters=zi<2"
+CAND_SNIa_026,ZTF18aayjyub,SN Ia,in_distribution,AMBIGUOUS_ASSOCIATION,False,AMBIGUOUS_ASSOCIATION: Ambiguous distinct candidate sources in passband 'zi': OID 821312300007333 (0.348'') vs OID 820309400006648 (0.353''). Mutual separation=0.179''. Separation gap (0.005'') < engineering heuristic threshold (0.3'').
+CAND_SNIa_027,ZTF18aaxvpsw,SN Ia,in_distribution,COVERAGE_SUFFICIENT,True,"ELIGIBLE: Satisfies provenance, unambiguous coordinate match (<=1.5""), >=20 tokens, <=60% padding, >=2 filters"
+CAND_SNIa_028,ZTF18aamzgzi,SN Ia,in_distribution,COVERAGE_SUFFICIENT,True,"ELIGIBLE: Satisfies provenance, unambiguous coordinate match (<=1.5""), >=20 tokens, <=60% padding, >=2 filters"
+CAND_SNIa_029,ZTF18aaxwjmp,SN Ia,in_distribution,AMBIGUOUS_ASSOCIATION,False,AMBIGUOUS_ASSOCIATION: Ambiguous distinct candidate sources in passband 'zr': OID 1830216200025228 (0.502'') vs OID 824205100021219 (0.526''). Mutual separation=0.214''. Separation gap (0.024'') < engineering heuristic threshold (0.3'').
+CAND_SNIa_030,ZTF18aaydmkh,SN Ia,in_distribution,COVERAGE_SUFFICIENT,True,"ELIGIBLE: Satisfies provenance, unambiguous coordinate match (<=1.5""), >=20 tokens, <=60% padding, >=2 filters"
+CAND_SNIa_031,ZTF18aazabmh,SN Ia,in_distribution,COVERAGE_LIMITED,False,"COVERAGE_LIMITED: valid_tokens=10<20, padding_fraction=0.80>0.60, available_filters=zi<2"
+CAND_SNIa_032,ZTF19aanbojt,SN Ia,in_distribution,COVERAGE_SUFFICIENT,True,"ELIGIBLE: Satisfies provenance, unambiguous coordinate match (<=1.5""), >=20 tokens, <=60% padding, >=2 filters"
+CAND_SNIa_033,ZTF18aayidfz,SN Ia,in_distribution,INSUFFICIENT_OBSERVATIONS,False,INSUFFICIENT_OBSERVATIONS: only 4 valid tokens (<5 required)
+CAND_SNIa_034,ZTF18aazblzy,SN Ia,in_distribution,RETRIEVAL_FAILED,False,NO_DATA: Zero observations in IRSA cone
+CAND_SNIa_035,ZTF18aazixbw,SN Ia,in_distribution,COVERAGE_SUFFICIENT,True,"ELIGIBLE: Satisfies provenance, unambiguous coordinate match (<=1.5""), >=20 tokens, <=60% padding, >=2 filters"
+CAND_SNIa_036,ZTF18aazjztm,SN Ia,in_distribution,AMBIGUOUS_ASSOCIATION,False,AMBIGUOUS_ASSOCIATION: Ambiguous distinct candidate sources in passband 'zr': OID 1830202300017966 (1.263'') vs OID 796210400019839 (1.329''). Mutual separation=0.176''. Separation gap (0.066'') < engineering heuristic threshold (0.3'').
+CAND_SNIa_037,ZTF18aazsabq,SN Ia,in_distribution,COVERAGE_LIMITED,False,"COVERAGE_LIMITED: valid_tokens=13<20, padding_fraction=0.74>0.60, available_filters=zi<2"
+CAND_SNIa_038,ZTF18aaxmhvk,SN Ia,in_distribution,COVERAGE_LIMITED,False,"COVERAGE_LIMITED: valid_tokens=19<20, padding_fraction=0.62>0.60"
+CAND_SNIa_039,ZTF18aaxkjmm,SN Ia,in_distribution,COVERAGE_SUFFICIENT,True,"ELIGIBLE: Satisfies provenance, unambiguous coordinate match (<=1.5""), >=20 tokens, <=60% padding, >=2 filters"
+CAND_SNIa_040,ZTF18abaxlpi,SN Ia,in_distribution,COVERAGE_SUFFICIENT,True,"ELIGIBLE: Satisfies provenance, unambiguous coordinate match (<=1.5""), >=20 tokens, <=60% padding, >=2 filters"
+CAND_SNIa_041,ZTF18abbqjds,SN Ia,in_distribution,AMBIGUOUS_ASSOCIATION,False,AMBIGUOUS_ASSOCIATION: Ambiguous distinct candidate sources in passband 'zg': OID 862113400024457 (0.984'') vs OID 863111200016659 (1.025''). Mutual separation=0.221''. Separation gap (0.041'') < engineering heuristic threshold (0.3'').
+CAND_SNIa_042,ZTF18abbpeqo,SN Ia,in_distribution,INSUFFICIENT_OBSERVATIONS,False,INSUFFICIENT_OBSERVATIONS: only 4 valid tokens (<5 required)
+CAND_SNIa_043,ZTF18abbvsiv,SN Ia,in_distribution,COVERAGE_LIMITED,False,COVERAGE_LIMITED: available_filters=zi<2
+CAND_SNIa_044,ZTF18abcrtnq,SN Ia,in_distribution,RETRIEVAL_FAILED,False,NO_DATA: Zero observations in IRSA cone
+CAND_SNIa_045,ZTF18abcdzyc,SN Ia,in_distribution,COVERAGE_LIMITED,False,"COVERAGE_LIMITED: valid_tokens=14<20, padding_fraction=0.72>0.60"
+CAND_SNIa_046,ZTF18abckujg,SN Ia,in_distribution,RETRIEVAL_FAILED,False,NO_DATA: Zero observations in IRSA cone
+CAND_SNIa_047,ZTF18aazhwnh,SN Ia,in_distribution,COVERAGE_SUFFICIENT,True,"ELIGIBLE: Satisfies provenance, unambiguous coordinate match (<=1.5""), >=20 tokens, <=60% padding, >=2 filters"
+CAND_SNIa_048,ZTF18abcecfi,SN Ia,in_distribution,AMBIGUOUS_ASSOCIATION,False,AMBIGUOUS_ASSOCIATION: Ambiguous distinct candidate sources in passband 'zi': OID 846311400042424 (0.572'') vs OID 846311400029058 (0.598''). Mutual separation=0.560''. Separation gap (0.025'') < engineering heuristic threshold (0.3'').
+CAND_SNIa_049,ZTF18abcsgvj,SN Ia,in_distribution,COVERAGE_SUFFICIENT,True,"ELIGIBLE: Satisfies provenance, unambiguous coordinate match (<=1.5""), >=20 tokens, <=60% padding, >=2 filters"
+CAND_SNIa_050,ZTF18abckujq,SN Ia,in_distribution,RETRIEVAL_FAILED,False,NO_DATA: Zero observations in IRSA cone
+CAND_TDE_001,ZTF19aabbnzo,TDE,ood_anomaly,COVERAGE_SUFFICIENT,True,"ELIGIBLE: Satisfies provenance, unambiguous coordinate match (<=1.5""), >=20 tokens, <=60% padding, >=2 filters"
+CAND_TDE_002,ZTF17aaazdba,TDE,ood_anomaly,COVERAGE_LIMITED,False,"COVERAGE_LIMITED: valid_tokens=19<20, padding_fraction=0.62>0.60"
+CAND_TDE_003,ZTF19aapreis,TDE,ood_anomaly,COVERAGE_SUFFICIENT,True,"ELIGIBLE: Satisfies provenance, unambiguous coordinate match (<=1.5""), >=20 tokens, <=60% padding, >=2 filters"
+CAND_TDE_004,ZTF19aarioci,TDE,ood_anomaly,COVERAGE_SUFFICIENT,True,"ELIGIBLE: Satisfies provenance, unambiguous coordinate match (<=1.5""), >=20 tokens, <=60% padding, >=2 filters"
+CAND_TDE_005,ZTF19abidbya,TDE,ood_anomaly,COVERAGE_SUFFICIENT,True,"ELIGIBLE: Satisfies provenance, unambiguous coordinate match (<=1.5""), >=20 tokens, <=60% padding, >=2 filters"
+CAND_TDE_006,ZTF19abzrhgq,TDE,ood_anomaly,COVERAGE_SUFFICIENT,True,"ELIGIBLE: Satisfies provenance, unambiguous coordinate match (<=1.5""), >=20 tokens, <=60% padding, >=2 filters"
+CAND_TDE_007,ZTF20aabqihu,TDE,ood_anomaly,COVERAGE_SUFFICIENT,True,"ELIGIBLE: Satisfies provenance, unambiguous coordinate match (<=1.5""), >=20 tokens, <=60% padding, >=2 filters"
+CAND_TDE_008,ZTF20abfcszi,TDE,ood_anomaly,COVERAGE_SUFFICIENT,True,"ELIGIBLE: Satisfies provenance, unambiguous coordinate match (<=1.5""), >=20 tokens, <=60% padding, >=2 filters"
+CAND_TDE_009,ZTF20abgwfek,TDE,ood_anomaly,COVERAGE_SUFFICIENT,True,"ELIGIBLE: Satisfies provenance, unambiguous coordinate match (<=1.5""), >=20 tokens, <=60% padding, >=2 filters"
+CAND_TDE_010,ZTF20acaazkt,TDE,ood_anomaly,COVERAGE_SUFFICIENT,True,"ELIGIBLE: Satisfies provenance, unambiguous coordinate match (<=1.5""), >=20 tokens, <=60% padding, >=2 filters"
+CAND_TDE_011,ZTF20acitpfz,TDE,ood_anomaly,COVERAGE_SUFFICIENT,True,"ELIGIBLE: Satisfies provenance, unambiguous coordinate match (<=1.5""), >=20 tokens, <=60% padding, >=2 filters"
+CAND_TDE_012,ZTF20acnznms,TDE,ood_anomaly,COVERAGE_SUFFICIENT,True,"ELIGIBLE: Satisfies provenance, unambiguous coordinate match (<=1.5""), >=20 tokens, <=60% padding, >=2 filters"
+CAND_TDE_013,ZTF21abcgnqn,TDE,ood_anomaly,COVERAGE_SUFFICIENT,True,"ELIGIBLE: Satisfies provenance, unambiguous coordinate match (<=1.5""), >=20 tokens, <=60% padding, >=2 filters"
+CAND_TDE_014,ZTF21abhrchb,TDE,ood_anomaly,COVERAGE_SUFFICIENT,True,"ELIGIBLE: Satisfies provenance, unambiguous coordinate match (<=1.5""), >=20 tokens, <=60% padding, >=2 filters"
+CAND_TDE_015,ZTF21abjrysr,TDE,ood_anomaly,COVERAGE_SUFFICIENT,True,"ELIGIBLE: Satisfies provenance, unambiguous coordinate match (<=1.5""), >=20 tokens, <=60% padding, >=2 filters"
+CAND_VarStar_001,ZTFJ000000.13+620605.8,Variable_Star,in_distribution,COVERAGE_SUFFICIENT,True,"ELIGIBLE: Satisfies provenance, unambiguous coordinate match (<=1.5""), >=20 tokens, <=60% padding, >=2 filters"
+CAND_VarStar_002,ZTFJ000000.14+721413.7,Variable_Star,in_distribution,AMBIGUOUS_ASSOCIATION,False,AMBIGUOUS_ASSOCIATION: Ambiguous distinct candidate sources in passband 'zg': OID 833116100012915 (0.190'') vs OID 853113200018291 (0.242''). Mutual separation=1523.657''. Separation gap (0.052'') < engineering heuristic threshold (0.3'').
+CAND_VarStar_003,ZTFJ000000.19+320847.2,Variable_Star,in_distribution,COVERAGE_SUFFICIENT,True,"ELIGIBLE: Satisfies provenance, unambiguous coordinate match (<=1.5""), >=20 tokens, <=60% padding, >=2 filters"
+CAND_VarStar_004,ZTFJ000000.26+311206.3,Variable_Star,in_distribution,COVERAGE_SUFFICIENT,True,"ELIGIBLE: Satisfies provenance, unambiguous coordinate match (<=1.5""), >=20 tokens, <=60% padding, >=2 filters"
+CAND_VarStar_005,ZTFJ000000.30+711634.1,Variable_Star,in_distribution,COVERAGE_SUFFICIENT,True,"ELIGIBLE: Satisfies provenance, unambiguous coordinate match (<=1.5""), >=20 tokens, <=60% padding, >=2 filters"
+CAND_VarStar_006,ZTFJ000000.30+233400.5,Variable_Star,in_distribution,COVERAGE_SUFFICIENT,True,"ELIGIBLE: Satisfies provenance, unambiguous coordinate match (<=1.5""), >=20 tokens, <=60% padding, >=2 filters"
+CAND_VarStar_007,ZTFJ000000.39+605148.8,Variable_Star,in_distribution,COVERAGE_SUFFICIENT,True,"ELIGIBLE: Satisfies provenance, unambiguous coordinate match (<=1.5""), >=20 tokens, <=60% padding, >=2 filters"
+CAND_VarStar_008,ZTFJ000000.51+583238.7,Variable_Star,in_distribution,COVERAGE_SUFFICIENT,True,"ELIGIBLE: Satisfies provenance, unambiguous coordinate match (<=1.5""), >=20 tokens, <=60% padding, >=2 filters"
+CAND_VarStar_009,ZTFJ000001.00+612832.8,Variable_Star,in_distribution,COVERAGE_SUFFICIENT,True,"ELIGIBLE: Satisfies provenance, unambiguous coordinate match (<=1.5""), >=20 tokens, <=60% padding, >=2 filters"
+CAND_VarStar_010,ZTFJ000001.37+561504.9,Variable_Star,in_distribution,COVERAGE_SUFFICIENT,True,"ELIGIBLE: Satisfies provenance, unambiguous coordinate match (<=1.5""), >=20 tokens, <=60% padding, >=2 filters"
+CAND_VarStar_011,ZTFJ000001.74+614940.9,Variable_Star,in_distribution,COVERAGE_SUFFICIENT,True,"ELIGIBLE: Satisfies provenance, unambiguous coordinate match (<=1.5""), >=20 tokens, <=60% padding, >=2 filters"
+CAND_VarStar_012,ZTFJ000001.75+594739.4,Variable_Star,in_distribution,COVERAGE_SUFFICIENT,True,"ELIGIBLE: Satisfies provenance, unambiguous coordinate match (<=1.5""), >=20 tokens, <=60% padding, >=2 filters"
+CAND_VarStar_013,ZTFJ000002.02+540550.8,Variable_Star,in_distribution,COVERAGE_SUFFICIENT,True,"ELIGIBLE: Satisfies provenance, unambiguous coordinate match (<=1.5""), >=20 tokens, <=60% padding, >=2 filters"
+CAND_VarStar_014,ZTFJ000002.20+480720.8,Variable_Star,in_distribution,COVERAGE_SUFFICIENT,True,"ELIGIBLE: Satisfies provenance, unambiguous coordinate match (<=1.5""), >=20 tokens, <=60% padding, >=2 filters"
+CAND_VarStar_015,ZTFJ000002.21+385226.4,Variable_Star,in_distribution,COVERAGE_SUFFICIENT,True,"ELIGIBLE: Satisfies provenance, unambiguous coordinate match (<=1.5""), >=20 tokens, <=60% padding, >=2 filters"
+CAND_VarStar_016,ZTFJ000002.27+331411.5,Variable_Star,in_distribution,COVERAGE_SUFFICIENT,True,"ELIGIBLE: Satisfies provenance, unambiguous coordinate match (<=1.5""), >=20 tokens, <=60% padding, >=2 filters"
+CAND_VarStar_017,ZTFJ000002.28+592423.4,Variable_Star,in_distribution,COVERAGE_SUFFICIENT,True,"ELIGIBLE: Satisfies provenance, unambiguous coordinate match (<=1.5""), >=20 tokens, <=60% padding, >=2 filters"
+CAND_VarStar_018,ZTFJ000002.61+560944.8,Variable_Star,in_distribution,COVERAGE_SUFFICIENT,True,"ELIGIBLE: Satisfies provenance, unambiguous coordinate match (<=1.5""), >=20 tokens, <=60% padding, >=2 filters"
+CAND_VarStar_019,ZTFJ000002.69+640614.8,Variable_Star,in_distribution,COVERAGE_SUFFICIENT,True,"ELIGIBLE: Satisfies provenance, unambiguous coordinate match (<=1.5""), >=20 tokens, <=60% padding, >=2 filters"
+CAND_VarStar_020,ZTFJ000002.99+611736.0,Variable_Star,in_distribution,COVERAGE_SUFFICIENT,True,"ELIGIBLE: Satisfies provenance, unambiguous coordinate match (<=1.5""), >=20 tokens, <=60% padding, >=2 filters"
+CAND_VarStar_021,ZTFJ000003.05+410045.6,Variable_Star,in_distribution,COVERAGE_SUFFICIENT,True,"ELIGIBLE: Satisfies provenance, unambiguous coordinate match (<=1.5""), >=20 tokens, <=60% padding, >=2 filters"
+CAND_VarStar_022,ZTFJ000003.10+722838.4,Variable_Star,in_distribution,COVERAGE_SUFFICIENT,True,"ELIGIBLE: Satisfies provenance, unambiguous coordinate match (<=1.5""), >=20 tokens, <=60% padding, >=2 filters"
+CAND_VarStar_023,ZTFJ000003.13-022548.2,Variable_Star,in_distribution,COVERAGE_SUFFICIENT,True,"ELIGIBLE: Satisfies provenance, unambiguous coordinate match (<=1.5""), >=20 tokens, <=60% padding, >=2 filters"
+CAND_VarStar_024,ZTFJ000003.23+543605.4,Variable_Star,in_distribution,COVERAGE_SUFFICIENT,True,"ELIGIBLE: Satisfies provenance, unambiguous coordinate match (<=1.5""), >=20 tokens, <=60% padding, >=2 filters"
+CAND_VarStar_025,ZTFJ000003.24+692214.2,Variable_Star,in_distribution,COVERAGE_SUFFICIENT,True,"ELIGIBLE: Satisfies provenance, unambiguous coordinate match (<=1.5""), >=20 tokens, <=60% padding, >=2 filters"

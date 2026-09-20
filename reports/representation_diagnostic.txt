@@ -1,0 +1,187 @@
+================================================================================
+     ACEI MULTIMODAL REPRESENTATION-LEVEL DIAGNOSTIC REPORT
+================================================================================
+Objective: Investigate why the 256-D multimodal representation strongly separates
+           SLSN but fails to separate held-out LRN and TDE from known transients.
+Benchmark: 50 test events (20 known: SN_Ia, SN_II, Stellar_Flare, Variable_Star;
+                          30 anomalies: 10 LRN, 10 SLSN, 10 TDE).
+Evaluator: Fixed threshold 0.65, robust validation calibration, random seed 42.
+
+--------------------------------------------------------------------------------
+1. ARCHITECTURAL IDENTIFICATION
+--------------------------------------------------------------------------------
+  1. Image Encoder Output Dimension:        128 (ResNet-18 backbone + 2-layer MLP projection)
+  2. Lightcurve Encoder Output Dimension:   128 (Transformer + Time2Vec + masked pooling)
+  3. Fusion Mechanism:                      CrossAttentionFusion (bidirectional cross-attention,
+                                            4 heads, dimension 256, sigmoid gating)
+  4. Final 256-D Embedding Construction:    Projected gated output: g * h_img + (1-g) * h_lc
+  5. Independent Extraction Feasibility:    YES. image_encoder and lc_encoder extract independently
+  6. Only Training Objective:               YES. Standard CrossEntropyLoss on 4 known classes
+  7. Metric / Contrastive Learning Used:    NO. Zero contrastive, triplet, or metric learning loss
+
+--------------------------------------------------------------------------------
+2. OOD SEPARABILITY COMPARISON BY MODALITY (Mahalanobis Methodology @ Thresh = 0.65)
+--------------------------------------------------------------------------------
+Representation     | AUROC   | AUPRC   | AP      | F1      | FPR     | Overall Rec | LRN Rec  | SLSN Rec  | TDE Rec 
+--------------------------------------------------------------------------------------------------------------------
+Image-only         | 0.5200  | 0.5943  | 0.6079  | 0.0000  | 0.0   % | 0.0       % | 0.0    % | 0.0     % | 0.0    %
+Lightcurve-only    | 0.7817  | 0.8536  | 0.8563  | 0.4878  | 5.0   % | 33.3      % | 0.0    % | 100.0   % | 0.0    %
+Fused 256-D        | 0.7450  | 0.8257  | 0.8292  | 0.5455  | 10.0  % | 40.0      % | 10.0   % | 100.0   % | 10.0   %
+
+--------------------------------------------------------------------------------
+3. MANIFOLD GEOMETRY: DISTANCE TO NEAREST KNOWN CENTROID (Fused 256-D)
+--------------------------------------------------------------------------------
+Event Class        | N    | Mean Dist  | Median Dist  | Std Dev  | Min Dist  | Max Dist 
+----------------------------------------------------------------------------------------
+SN_Ia              | 5    | 19.2135    | 19.0177      | 3.6169   | 15.5308   | 25.2419  
+SN_II              | 5    | 16.6952    | 15.9385      | 3.3421   | 12.7181   | 22.1882  
+Stellar_Flare      | 5    | 19.0134    | 18.2204      | 3.7720   | 13.8145   | 25.3417  
+Variable_Star      | 5    | 17.0952    | 16.0475      | 2.1353   | 14.9469   | 20.3863  
+LRN                | 10   | 19.2773    | 18.5556      | 3.5457   | 15.6330   | 28.0229  
+SLSN               | 10   | 27.2580    | 27.2792      | 2.1139   | 24.3946   | 31.2165  
+TDE                | 10   | 19.0642    | 19.0660      | 2.7902   | 15.3772   | 25.1077  
+
+--------------------------------------------------------------------------------
+4. HELD-OUT ANOMALIES DETAILED BREAKDOWN (Fused 256-D)
+--------------------------------------------------------------------------------
+
+[LRN Events (N=10)]
+  Object ID               | Nearest Class   | Min Dist  | d(SN_Ia)  | d(SN_II)  | d(Flare)  | d(Var)   
+  -----------------------------------------------------------------------------------------------------
+  ZTF_ANOMALY_LRN_0000    | SN_Ia           | 17.1581   | 17.16     | 25.72     | 31.47     | 17.50    
+  ZTF_ANOMALY_LRN_0003    | SN_Ia           | 20.4417   | 20.44     | 26.12     | 33.42     | 20.61    
+  ZTF_ANOMALY_LRN_0006    | Variable_Star   | 18.3445   | 19.24     | 21.56     | 36.75     | 18.34    
+  ZTF_ANOMALY_LRN_0009    | Variable_Star   | 15.6330   | 15.92     | 17.20     | 36.45     | 15.63    
+  ZTF_ANOMALY_LRN_0012    | Stellar_Flare   | 28.0229   | 29.11     | 36.32     | 28.02     | 30.04    
+  ZTF_ANOMALY_LRN_0015    | SN_Ia           | 21.1156   | 21.12     | 26.17     | 37.48     | 21.16    
+  ZTF_ANOMALY_LRN_0018    | SN_II           | 15.6363   | 19.79     | 15.64     | 38.48     | 19.86    
+  ZTF_ANOMALY_LRN_0021    | SN_Ia           | 21.2704   | 21.27     | 27.36     | 27.51     | 21.63    
+  ZTF_ANOMALY_LRN_0024    | Variable_Star   | 16.3844   | 18.10     | 19.97     | 38.67     | 16.38    
+  ZTF_ANOMALY_LRN_0027    | SN_Ia           | 18.7666   | 18.77     | 25.31     | 34.88     | 19.66    
+
+[SLSN Events (N=10)]
+  Object ID               | Nearest Class   | Min Dist  | d(SN_Ia)  | d(SN_II)  | d(Flare)  | d(Var)   
+  -----------------------------------------------------------------------------------------------------
+  ZTF_ANOMALY_SLSN_0001   | SN_II           | 29.2213   | 37.95     | 29.22     | 48.85     | 37.33    
+  ZTF_ANOMALY_SLSN_0004   | SN_II           | 25.4682   | 34.49     | 25.47     | 46.75     | 33.54    
+  ZTF_ANOMALY_SLSN_0007   | SN_II           | 27.6815   | 36.35     | 27.68     | 48.20     | 35.78    
+  ZTF_ANOMALY_SLSN_0010   | SN_II           | 26.8768   | 35.34     | 26.88     | 48.61     | 34.85    
+  ZTF_ANOMALY_SLSN_0013   | SN_II           | 24.3946   | 34.50     | 24.39     | 47.31     | 33.48    
+  ZTF_ANOMALY_SLSN_0016   | SN_II           | 26.0132   | 34.92     | 26.01     | 48.76     | 34.41    
+  ZTF_ANOMALY_SLSN_0019   | SN_II           | 31.2165   | 38.08     | 31.22     | 49.78     | 36.97    
+  ZTF_ANOMALY_SLSN_0022   | SN_II           | 28.4696   | 37.34     | 28.47     | 49.66     | 36.94    
+  ZTF_ANOMALY_SLSN_0025   | SN_II           | 28.8101   | 37.24     | 28.81     | 50.20     | 36.98    
+  ZTF_ANOMALY_SLSN_0028   | SN_II           | 24.4281   | 33.57     | 24.43     | 46.98     | 32.62    
+
+[TDE Events (N=10)]
+  Object ID               | Nearest Class   | Min Dist  | d(SN_Ia)  | d(SN_II)  | d(Flare)  | d(Var)   
+  -----------------------------------------------------------------------------------------------------
+  ZTF_ANOMALY_TDE_0002    | SN_Ia           | 18.8572   | 18.86     | 23.69     | 33.31     | 18.91    
+  ZTF_ANOMALY_TDE_0005    | SN_Ia           | 19.0951   | 19.10     | 24.44     | 39.19     | 22.12    
+  ZTF_ANOMALY_TDE_0008    | Variable_Star   | 15.9593   | 17.52     | 22.48     | 40.71     | 15.96    
+  ZTF_ANOMALY_TDE_0011    | SN_Ia           | 19.6162   | 19.62     | 25.36     | 35.89     | 19.91    
+  ZTF_ANOMALY_TDE_0014    | SN_Ia           | 25.1077   | 25.11     | 32.09     | 31.22     | 26.59    
+  ZTF_ANOMALY_TDE_0017    | Variable_Star   | 15.3772   | 16.41     | 18.83     | 35.93     | 15.38    
+  ZTF_ANOMALY_TDE_0020    | SN_II           | 21.3601   | 25.16     | 21.36     | 42.97     | 25.21    
+  ZTF_ANOMALY_TDE_0023    | SN_Ia           | 15.8057   | 15.81     | 24.62     | 32.95     | 18.43    
+  ZTF_ANOMALY_TDE_0026    | SN_Ia           | 19.0369   | 19.04     | 26.64     | 34.19     | 19.52    
+  ZTF_ANOMALY_TDE_0029    | SN_Ia           | 20.4271   | 20.43     | 20.58     | 40.23     | 20.88    
+
+--------------------------------------------------------------------------------
+5. BETWEEN-CLASS & WITHIN-CLASS DISTANCES (Fused 256-D)
+--------------------------------------------------------------------------------
+Between-Class Centroid Distances (Mahalanobis):
+                 SN_Ia          SN_II          Stellar_Flare  Variable_Star 
+SN_Ia            0.0000         16.8337        31.0472        7.7901        
+SN_II            16.8337        0.0000         37.1054        15.9319       
+Stellar_Flare    31.0472        37.1054        0.0000         32.4637       
+Variable_Star    7.7901         15.9319        32.4637        0.0000        
+
+Within-Class Distances (Training Set to Own Centroid):
+  SN_Ia           : Mean = 8.1108, Median = 8.0701, Std = 0.2805
+  SN_II           : Mean = 7.9744, Median = 8.0135, Std = 0.2810
+  Stellar_Flare   : Mean = 7.5538, Median = 7.5187, Std = 0.3560
+  Variable_Star   : Mean = 7.8455, Median = 7.8618, Std = 0.2124
+
+--------------------------------------------------------------------------------
+6. SCIENTIFIC DIAGNOSTIC ANSWERS (Questions 1 - 10)
+--------------------------------------------------------------------------------
+1. Is the image modality contributing useful anomaly separation?
+   NO. Image-only Mahalanobis achieves AUROC = 0.5200 (random chance) and 0.0% recall
+   at threshold 0.65. Because image preprocessing applies per-channel min-max arcsinh
+   stretching, flux amplitude information is completely lost. Centered PSFs on host galaxies
+   are indistinguishable across all classes, collapsing into an uninformative 128-D ball
+   where mean distance is ~13.7 for both known transients and anomalies.
+
+2. Is the lightcurve modality contributing useful anomaly separation?
+   YES. Lightcurve-only Mahalanobis achieves AUROC = 0.7817, AUPRC = 0.8536, and 100% SLSN
+   recall with only 5.0% FPR. The lightcurve encoder captures the dramatic flux and timescale
+   differences of SLSN (mean distance 19.33 vs known mean 7.24, an 7.8-sigma separation).
+
+3. Does fusion improve or reduce separation?
+   FUSION REDUCES SEPARATION. Cross-attention fusion drops AUROC from 0.7817 (LC-only)
+   down to 0.7450 (Fused 256-D), and doubles known FPR from 5.0% to 10.0%. Because the image
+   modality contains pure noise regarding anomaly status, attending to image features injects
+   128 dimensions of uninformative variance, diluting the sharp lightcurve signal.
+
+4. Why is SLSN strongly separated?
+   SLSN transients have an extreme peak flux amplitude (~4.5 vs 0.8-1.2 for normal SNe) and
+   long rise/fall timescales (30-50d). In the lightcurve transformer, these extreme values
+   push activations into an unpopulated region of latent space, resulting in large Mahalanobis
+   distances (mean d_min = 27.26 in 256-D space, min = 24.39 vs known mean = 18.00).
+
+5. Why are LRN and TDE close to the known manifold?
+   - LRN events have moderate peak fluxes (g ~ 0.8, r ~ 0.85) similar to Type II and Ia SNe.
+     Although they have distinct red i-band peaks, sparse irregular observations cause their
+     mean pooled transformer embeddings to overlap with normal transients (mean d_min = 19.28).
+   - TDE events follow a smooth single-peaked thermal evolution (exp(-|t|/15)) with peak ~1.0,
+     which closely mimics normal SN_Ia lightcurves. Consequently, TDE embeddings lie directly
+     on the SN_Ia manifold (mean d_min = 19.06 vs SN_Ia test mean = 19.21).
+
+6. Which known class is each LRN event closest to?
+   LRN events are closest primarily to SN_Ia (5/10) and Variable_Star (3/10):
+     - ZTF_ANOMALY_LRN_0000: SN_Ia (d = 17.16)
+     - ZTF_ANOMALY_LRN_0003: SN_Ia (d = 20.44)
+     - ZTF_ANOMALY_LRN_0006: Variable_Star (d = 18.34)
+     - ZTF_ANOMALY_LRN_0009: Variable_Star (d = 15.63)
+     - ZTF_ANOMALY_LRN_0012: Stellar_Flare (d = 28.02)
+     - ZTF_ANOMALY_LRN_0015: SN_Ia (d = 21.12)
+     - ZTF_ANOMALY_LRN_0018: SN_II (d = 15.64)
+     - ZTF_ANOMALY_LRN_0021: SN_Ia (d = 21.27)
+     - ZTF_ANOMALY_LRN_0024: Variable_Star (d = 16.38)
+     - ZTF_ANOMALY_LRN_0027: SN_Ia (d = 18.77)
+
+7. Which known class is each TDE event closest to?
+   TDE events are overwhelmingly closest to SN_Ia (7/10), followed by Variable_Star (2/10):
+     - ZTF_ANOMALY_TDE_0002: SN_Ia (d = 18.86)
+     - ZTF_ANOMALY_TDE_0005: SN_Ia (d = 19.10)
+     - ZTF_ANOMALY_TDE_0008: Variable_Star (d = 15.96)
+     - ZTF_ANOMALY_TDE_0011: SN_Ia (d = 19.62)
+     - ZTF_ANOMALY_TDE_0014: SN_Ia (d = 25.11)
+     - ZTF_ANOMALY_TDE_0017: Variable_Star (d = 15.38)
+     - ZTF_ANOMALY_TDE_0020: SN_II (d = 21.36)
+     - ZTF_ANOMALY_TDE_0023: SN_Ia (d = 15.81)
+     - ZTF_ANOMALY_TDE_0026: SN_Ia (d = 19.04)
+     - ZTF_ANOMALY_TDE_0029: SN_Ia (d = 20.43)
+
+8. Is the failure primarily caused by image representation, lightcurve representation,
+   fusion, or insufficient training?
+   THE FAILURE IS PRIMARILY DRIVEN BY TWO FACTORS:
+   a) The Image Representation is completely uninformative and cross-attention fusion injects
+      this noise into the 256-D space, worsening separation.
+   b) The Classifier-Only Training Objective (Cross-Entropy Loss): Cross-entropy only learns
+      hyperplanes that partition the known classes. It does not enforce compact, closed class
+      clusters. Any out-of-distribution event with moderate flux falls into the open Voronoi
+      cells of SN_Ia or Variable_Star.
+
+9. Does the current classifier objective produce an embedding suitable for OOD detection?
+   NO. Closed-world softmax cross-entropy is fundamentally ill-suited for open-set detection.
+   It forces all space to map to one of the 4 known classes without penalizing feature drift
+   or enforcing intra-class compactness. Only extreme amplitude outliers (SLSN) escape.
+
+10. What is the single highest-value architectural improvement to investigate next?
+    A METRIC-LEARNING / CONTRASTIVE LOSS REGULARIZER (e.g. Supervised Contrastive Loss /
+    Center Loss) combined with Modality Gating or LC-dominant fusion. Constraining known-class
+    representations to tight hyperspherical clusters with an explicit margin prevents non-conforming
+    transients (LRN and TDE) from masquerading as normal supernovae.
+================================================================================

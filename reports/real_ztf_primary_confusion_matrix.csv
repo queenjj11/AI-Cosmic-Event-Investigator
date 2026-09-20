@@ -1,0 +1,5 @@
+category,count,rate,description
+True Positive (TP),17,0.5,OOD anomaly correctly flagged
+False Positive (FP),38,0.6551724137931034,Known in-distribution falsely flagged
+True Negative (TN),20,0.3448275862068966,Known in-distribution correctly rejected
+False Negative (FN),17,0.5,OOD anomaly missed

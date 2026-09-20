@@ -1,0 +1,404 @@
+{
+  "object_id": "CAND_VarStar_011",
+  "metadata": {
+    "candidate_id": "CAND_VarStar_011",
+    "claimed_type": "Variable_Star",
+    "ra": 0.00729,
+    "dec": 61.82803,
+    "redshift": null,
+    "ztf_object_id": "ZTFJ000001.74+614940.9"
+  },
+  "event_characterization": {
+    "num_observations": {
+      "value": 3675,
+      "status": "MEASURED",
+      "unit": "observations",
+      "notes": "Observations surviving bitwise catflag, cloud, and artifact filtering"
+    },
+    "num_filters": {
+      "value": 3,
+      "status": "MEASURED",
+      "unit": "passbands",
+      "notes": "Active optical passbands (zg, zr, zi) with >= 1 observation"
+    },
+    "time_baseline_days": {
+      "value": 2749.699,
+      "status": "MEASURED",
+      "unit": "days",
+      "notes": "Span between first and last clean photometric observation"
+    },
+    "window_duration_days": {
+      "value": 80.0,
+      "status": "DERIVED",
+      "unit": "days",
+      "notes": "Duration of candidate transient outburst evaluation window"
+    },
+    "peak_normalized_flux": {
+      "value": 1.5,
+      "status": "MEASURED",
+      "unit": "normalized_flux",
+      "notes": "Maximum normalized flux observed in sequence"
+    },
+    "minimum_normalized_flux": {
+      "value": 0.2255,
+      "status": "MEASURED",
+      "unit": "normalized_flux",
+      "notes": "Minimum normalized flux observed in sequence"
+    },
+    "median_normalized_flux": {
+      "value": 0.8109,
+      "status": "DERIVED",
+      "unit": "normalized_flux",
+      "notes": "Median normalized flux of sequence"
+    },
+    "flux_std": {
+      "value": 0.4029,
+      "status": "DERIVED",
+      "unit": "normalized_flux",
+      "notes": "Standard deviation of normalized flux"
+    },
+    "median_flux_err": {
+      "value": 0.0162,
+      "status": "DERIVED",
+      "unit": "normalized_flux",
+      "notes": "Median normalized photometric measurement uncertainty"
+    },
+    "variability_amplitude": {
+      "value": 1.2745,
+      "status": "DERIVED",
+      "unit": "normalized_flux",
+      "notes": "Peak-to-trough normalized flux variation"
+    },
+    "rise_time_proxy_days": {
+      "value": 16.96,
+      "status": "PROXY",
+      "unit": "days",
+      "notes": "Half-maximum rise duration proxy to peak observation"
+    },
+    "decline_time_proxy_days": {
+      "value": 3.0,
+      "status": "PROXY",
+      "unit": "days",
+      "notes": "Half-maximum decline duration proxy from peak observation"
+    },
+    "rise_decline_asymmetry": {
+      "value": -0.6994,
+      "status": "PROXY",
+      "unit": "dimensionless",
+      "notes": "Rise/decline asymmetry: >0 means fast rise / slow decline; <0 means slow rise / fast decline"
+    },
+    "cadence_median_days": {
+      "value": 1.102,
+      "status": "DERIVED",
+      "unit": "days",
+      "notes": "Median inter-observation interval within window"
+    },
+    "cadence_min_days": {
+      "value": 0.004,
+      "status": "DERIVED",
+      "unit": "days",
+      "notes": "Shortest interval between distinct observation epochs"
+    },
+    "cadence_max_days": {
+      "value": 10.908,
+      "status": "DERIVED",
+      "unit": "days",
+      "notes": "Longest observational gap within window"
+    },
+    "per_band_counts": {
+      "g": 20,
+      "r": 19,
+      "i": 11
+    },
+    "missing_bands": [],
+    "valid_token_count": {
+      "value": 50,
+      "status": "DERIVED",
+      "unit": "tokens",
+      "notes": "Sampled and binned observation tokens populated in model sequence (max 50)"
+    },
+    "padding_fraction": {
+      "value": 0.0,
+      "status": "DERIVED",
+      "unit": "fraction",
+      "notes": "Fraction of sequence capacity filled with zero-padding mask"
+    },
+    "classification_disclaimer": "No astrophysical classification claimed from non-learned features alone."
+  },
+  "representation_summary": {
+    "object_id": "CAND_VarStar_011",
+    "embedding_dimension": 128,
+    "embedding_norm": 11.320969216827743,
+    "embedding": [
+      0.9259693622589111,
+      0.20490114390850067,
+      -2.009537935256958,
+      -1.6053779125213623,
+      -2.030647039413452,
+      -1.938749074935913,
+      1.3658802509307861,
+      0.011972726322710514,
+      -0.5879107117652893,
+      -1.7523512840270996,
+      1.8565683364868164,
+      1.8598450422286987,
+      -0.046375639736652374,
+      -1.9418243169784546,
+      0.36805635690689087,
+      0.44589388370513916,
+      0.4095403850078583,
+      -0.8197376132011414,
+      0.054401081055402756,
+      -0.3785892724990845,
+      0.8651061058044434,
+      0.10611739754676819,
+      1.0243045091629028,
+      0.6552104949951172,
+      -0.4786742627620697,
+      -0.8810808658599854,
+      0.3905233144760132,
+      0.5487076044082642,
+      -0.42409244179725647,
+      -0.030106469988822937,
+      1.4755423069000244,
+      1.1927382946014404,
+      -0.6691566109657288,
+      -0.6991611123085022,
+      -1.1375497579574585,
+      0.4544743299484253,
+      0.13122814893722534,
+      2.6009111404418945,
+      0.411317378282547,
+      0.6362009048461914,
+      0.475992351770401,
+      1.2796975374221802,
+      -0.13855905830860138,
+      0.3663347065448761,
+      1.0756703615188599,
+      -0.08807225525379181,
+      0.4119051694869995,
+      0.2637340724468231,
+      0.09086660295724869,
+      -1.1508793830871582,
+      0.492351233959198,
+      -0.3525933027267456,
+      -0.39083224534988403,
+      -2.481436014175415,
+      0.21985863149166107,
+      -0.0038814074359834194,
+      -0.18956345319747925,
+      0.7122872471809387,
+      -0.552297055721283,
+      0.31212297081947327,
+      -0.6908578276634216,
+      0.7355518937110901,
+      1.4311707019805908,
+      -0.8767245411872864,
+      0.9407120943069458,
+      0.33782079815864563,
+      -1.1374753713607788,
+      -0.5446071028709412,
+      0.09173228591680527,
+      1.352676272392273,
+      0.5040825605392456,
+      -0.8388146162033081,
+      -0.5427370071411133,
+      -1.361823320388794,
+      -1.0421077013015747,
+      0.6681383848190308,
+      -0.7297890782356262,
+      1.6678098440170288,
+      0.13554885983467102,
+      -0.8537338972091675,
+      1.0087292194366455,
+      -2.409191131591797,
+      0.9718155860900879,
+      -0.579429566860199,
+      0.7877621650695801,
+      0.5107294321060181,
+      -1.1418101787567139,
+      -0.3823395073413849,
+      0.007477797567844391,
+      -0.03929106518626213,
+      0.15683014690876007,
+      -0.1850799322128296,
+      0.8178195953369141,
+      -0.45823007822036743,
+      -0.03510275110602379,
+      0.0990968644618988,
+      -0.2762864828109741,
+      1.4296655654907227,
+      0.7641807198524475,
+      0.42857491970062256,
+      -0.7882601618766785,
+      0.09058386087417603,
+      -0.9923859238624573,
+      0.8973008394241333,
+      0.15107645094394684,
+      1.868627905845642,
+      0.18733064830303192,
+      1.1772310733795166,
+      0.9480699300765991,
+      -0.09706373512744904,
+      -0.6723049879074097,
+      -0.5773540735244751,
+      0.28117460012435913,
+      -1.3863013982772827,
+      -0.2860358655452728,
+      -0.15249520540237427,
+      2.6686718463897705,
+      -0.046854451298713684,
+      0.24192626774311066,
+      -1.0363107919692993,
+      -2.9853835105895996,
+      -0.4791390895843506,
+      -1.0374137163162231,
+      0.9325445890426636,
+      0.906597375869751,
+      -1.7600499391555786,
+      0.35382989048957825,
+      -0.10361746698617935
+    ],
+    "valid_token_count": 50,
+    "padding_fraction": 0.0,
+    "available_filters": [
+      "g",
+      "r",
+      "i"
+    ],
+    "time_span_days": 80.0,
+    "preprocessing_status": "SUCCESS",
+    "warnings": [],
+    "encoder_model": "Production LightCurveEncoder (128-D Transformer)",
+    "checkpoint_source": "models/checkpoints/acei_multimodal_production.pt"
+  },
+  "anomaly_assessment": {
+    "representation_available": true,
+    "anomaly_score_status": "REAL_ZTF_EVALUATED_RESEARCH",
+    "anomaly_score": 0.1111,
+    "anomaly_flag": false,
+    "detector_source": "Real-ZTF Light-Curve Anomaly Detector v2 (PCA-Mahalanobis)",
+    "uncertainty_or_status": "REAL_ZTF_EVALUATED_RESEARCH",
+    "limitations": [
+      "Evaluated on 106-object Real-ZTF Primary Benchmark (AUROC = 0.6881, AUPRC = 0.6862, FPR = 5.17%).",
+      "Operates directly on 128-D light-curve representations extracted by frozen LightCurveEncoder.",
+      "Decision threshold calibrated at 95th percentile of known in-distribution real ZTF transients.",
+      "Does not claim uncalibrated astrophysical discovery; requires multi-wavelength or spectroscopic confirmation."
+    ],
+    "domain_gap_notes": "Evaluated research model operating on real ZTF 128-D light-curve representation space. Image modality mismatch resolved by light-curve-only regularized distance scoring."
+  },
+  "candidate_hypotheses": [
+    {
+      "rank": 1,
+      "name": "Unclassified Field Star / Stellar Variability",
+      "supporting_evidence": [
+        "transient_taxonomy.json_Variable_Star"
+      ],
+      "contradictory_evidence": [
+        "Requires multi-epoch baseline to establish definite periodicity or flare cadence"
+      ],
+      "confidence_or_status": "UNVALIDATED_PRIOR",
+      "probability": 0.58,
+      "provenance_or_source": "ACEI Domain Grounded Reasoning Engine",
+      "justification": "Photometric baseline (2749.699d) shows low-amplitude or stellar stochastic variability.",
+      "distinguishing_criteria": "Periodogram analysis and Gaia DR3 astrometric parallax / proper motion cross-match."
+    },
+    {
+      "rank": 2,
+      "name": "Cataclysmic / Eruptive Variable Star",
+      "supporting_evidence": [
+        "lrn_astrophysics.md"
+      ],
+      "contradictory_evidence": [
+        "Outburst amplitude is moderate compared to canonical dwarf novae"
+      ],
+      "confidence_or_status": "UNVALIDATED_PRIOR",
+      "probability": 0.27,
+      "provenance_or_source": "ACEI Domain Grounded Reasoning Engine",
+      "justification": "Modest brightening on top of stellar baseline.",
+      "distinguishing_criteria": "Optical spectroscopy to determine stellar spectral type and accretion signatures."
+    },
+    {
+      "rank": 3,
+      "name": "Extragalactic Background Transient",
+      "supporting_evidence": [
+        "lrn_astrophysics.md"
+      ],
+      "contradictory_evidence": [
+        "Coincident stellar point source present in quiescent imaging"
+      ],
+      "confidence_or_status": "UNVALIDATED_PRIOR",
+      "probability": 0.15,
+      "provenance_or_source": "ACEI Domain Grounded Reasoning Engine",
+      "justification": "Coincidental alignment with a background extragalactic transient.",
+      "distinguishing_criteria": "High-resolution deep imaging to resolve background host galaxy."
+    }
+  ],
+  "evidence": [
+    {
+      "doc_id": "lrn_astrophysics.md",
+      "title": "Observational Signatures and Astrophysics of Luminous Red Novae (LRNe)",
+      "relevance_score": 0.2454,
+      "snippet": "### Diagnostic Photometric Signatures 1. **Light Curve Morphology:** Frequently exhibit an initial blue precursor peak followed weeks to months later by a broader, red secondary peak. 2. **Color Evolution:** Rapid red...",
+      "source_uri": "knowledge_base/papers/lrn_astrophysics.md"
+    },
+    {
+      "doc_id": "transient_taxonomy.json_Variable_Star",
+      "title": "Catalog: Periodic Variable Star (Cepheid / RR Lyrae)",
+      "relevance_score": 0.2259,
+      "snippet": "CATALOG REFERENCE: Periodic Variable Star (Cepheid / RR Lyrae) (Variable_Star) Physical Mechanism: Stellar pulsations driven by kappa-mechanism in helium ionization zone Peak Absolute Magnitude Range: [-4.0, 1.0] Rise...",
+      "source_uri": "knowledge_base/catalogs/transient_taxonomy.json"
+    },
+    {
+      "doc_id": "tde_supermassive_blackhole.md",
+      "title": "Photometric and Spectroscopic Evolution of Tidal Disruption Events",
+      "relevance_score": 0.1865,
+      "snippet": "### Diagnostic Photometric Signatures 1. **Host Nuclear Position:** Coincident with the precise photometric centroid of the host galaxy nucleus (offset $< 0.1$ arcseconds / $< 0.5$ pixels). 2. **Canonical $t^{-5/3}$ F...",
+      "source_uri": "knowledge_base/papers/tde_supermassive_blackhole.md"
+    }
+  ],
+  "confidence_summary": {
+    "representation_confidence": "HIGH (Frozen 128-D Encoder, 0 NaNs/Infs)",
+    "anomaly_confidence": "NOT_APPLICABLE (Detector unvalidated on real-ZTF domain)",
+    "classification_confidence": "PROVISIONAL_PRIOR (Non-learned heuristics, unconfirmed spectroscopically)",
+    "evidence_coverage": "3 relevant astrophysical passages retrieved"
+  },
+  "recommended_observations": [
+    {
+      "priority": 1,
+      "action": "Target-of-opportunity optical spectroscopy (3500-9000 A)",
+      "scientific_rationale": "Disambiguate competing scientific hypotheses ('Unclassified Field Star / Stellar Variability') via spectral line identification and redshift determination.",
+      "information_gap": "Zero spectroscopic observations available; physical expansion velocities and composition unconstrained",
+      "status": "RECOMMENDED",
+      "target_band": "optical_spectrum",
+      "urgency": "NORMAL"
+    },
+    {
+      "priority": 2,
+      "action": "Extend late-time photometric monitoring (t > 40 days)",
+      "scientific_rationale": "Constrain radioactive decay tail slope (Co-56 vs circumstellar interaction) or confirm quiescent return.",
+      "information_gap": "Post-peak light curve decline rate unconstrained at late epochs",
+      "status": "RECOMMENDED",
+      "target_band": "r",
+      "urgency": "LOW"
+    }
+  ],
+  "limitations": [
+    "Anomaly scores are suppressed: multimodal ensemble was trained on synthetic data with co-temporal difference images.",
+    "Real ZTF input is processed through the Light-Curve-First pathway without image-modality fusion.",
+    "Hypotheses reflect physical heuristics and retrieved literature, not automated ML classification.",
+    "Redshift, host galaxy associations, and absolute luminosities are unconstrained without external catalog queries.",
+    "Production checkpoint remained strictly frozen (no retraining, no fine-tuning, no threshold alteration)."
+  ],
+  "provenance": {
+    "source_survey": "ZTF Public Data Release / NASA IPAC IRSA",
+    "candidate_id": "CAND_VarStar_011",
+    "raw_observation_count": 4084,
+    "passed_observation_count": 3675,
+    "resolved_filepath": "data/real_ztf_benchmark/raw/CAND_VarStar_011/raw_irsa.csv",
+    "checkpoint_sha256": "e5c78fdc6f72cf972f4a3f5bf1b99dbb704aa7f047f7ed46ead1e9e538ffbc72",
+    "production_encoder_dim": 128,
+    "investigator_pipeline_version": "1.0.0-real-ztf-lightcurve-first"
+  },
+  "execution_time_seconds": 0.073
+}

@@ -1,0 +1,130 @@
+{
+  "model": "Real-ZTF Light-Curve Anomaly Detector v2",
+  "modality": "LightCurve Only (128-D Representation)",
+  "method": "PCA-Mahalanobis (Ledoit-Wolf)",
+  "n_components": 10,
+  "decision_threshold": 3.8657,
+  "primary_binary_n": 92,
+  "known_in_domain_n": 58,
+  "ood_anomalies_n": 34,
+  "control_field_stars_n": 14,
+  "metrics": {
+    "oof_pooled_auroc": 0.6795131845841785,
+    "oof_pooled_auprc": 0.6686867730646906,
+    "per_fold_mean_auroc": 0.683288770053476,
+    "per_fold_mean_auprc_inflated_slice": 0.8866339597051717,
+    "full_binary_auroc": 0.6881338742393509,
+    "full_binary_auprc": 0.6862359526098543,
+    "full_binary_ap": 0.6862359526098543,
+    "fpr": 0.05172413793103448,
+    "specificity": 0.9482758620689655,
+    "recall": 0.38235294117647056,
+    "f1": 0.52
+  },
+  "control_evaluation": {
+    "n": 14,
+    "flagged_count": 8,
+    "flagged_fraction": 0.5714285714285714
+  },
+  "v1_baseline_comparison": {
+    "v1_auroc": 0.3859,
+    "v2_auroc": 0.6881338742393509,
+    "auroc_delta": 0.3022,
+    "v1_auprc": 0.2948,
+    "v2_auprc": 0.6862359526098543,
+    "auprc_delta": 0.3914
+  },
+  "per_population": {
+    "Cataclysmic_Variable": {
+      "count": 13,
+      "candidate_role": "ood_anomaly",
+      "ground_truth": 1,
+      "mean_raw_score": 9.3909,
+      "mean_scaled_score": 1.0,
+      "flagged_count": 13,
+      "flagged_rate": 1.0
+    },
+    "Unclassified Field Star": {
+      "count": 14,
+      "candidate_role": "control",
+      "ground_truth": -1,
+      "mean_raw_score": 3.8141,
+      "mean_scaled_score": 0.712,
+      "flagged_count": 8,
+      "flagged_rate": 0.5714
+    },
+    "SLSN-I": {
+      "count": 5,
+      "candidate_role": "ood_anomaly",
+      "ground_truth": 1,
+      "mean_raw_score": 3.2941,
+      "mean_scaled_score": 0.6381,
+      "flagged_count": 0,
+      "flagged_rate": 0.0
+    },
+    "SLSN-II": {
+      "count": 2,
+      "candidate_role": "ood_anomaly",
+      "ground_truth": 1,
+      "mean_raw_score": 2.5264,
+      "mean_scaled_score": 0.4031,
+      "flagged_count": 0,
+      "flagged_rate": 0.0
+    },
+    "SN IIP": {
+      "count": 4,
+      "candidate_role": "in_distribution",
+      "ground_truth": 0,
+      "mean_raw_score": 3.6815,
+      "mean_scaled_score": 0.7484,
+      "flagged_count": 1,
+      "flagged_rate": 0.25
+    },
+    "SN II": {
+      "count": 9,
+      "candidate_role": "in_distribution",
+      "ground_truth": 0,
+      "mean_raw_score": 3.0012,
+      "mean_scaled_score": 0.5484,
+      "flagged_count": 2,
+      "flagged_rate": 0.2222
+    },
+    "SN IIb": {
+      "count": 2,
+      "candidate_role": "in_distribution",
+      "ground_truth": 0,
+      "mean_raw_score": 2.061,
+      "mean_scaled_score": 0.2606,
+      "flagged_count": 0,
+      "flagged_rate": 0.0
+    },
+    "SN Ia": {
+      "count": 19,
+      "candidate_role": "in_distribution",
+      "ground_truth": 0,
+      "mean_raw_score": 2.3907,
+      "mean_scaled_score": 0.3615,
+      "flagged_count": 0,
+      "flagged_rate": 0.0
+    },
+    "TDE": {
+      "count": 14,
+      "candidate_role": "ood_anomaly",
+      "ground_truth": 1,
+      "mean_raw_score": 2.1012,
+      "mean_scaled_score": 0.2729,
+      "flagged_count": 0,
+      "flagged_rate": 0.0
+    },
+    "Variable_Star": {
+      "count": 24,
+      "candidate_role": "in_distribution",
+      "ground_truth": 0,
+      "mean_raw_score": 2.2075,
+      "mean_scaled_score": 0.3055,
+      "flagged_count": 0,
+      "flagged_rate": 0.0
+    }
+  },
+  "operational_status": "REAL_ZTF_EVALUATED_RESEARCH"
+}

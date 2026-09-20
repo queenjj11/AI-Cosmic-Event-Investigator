@@ -1,0 +1,83 @@
+{
+  "benchmark_freeze_timestamp": "2026-09-19T13:28:52.633236+00:00",
+  "freeze_phase": "Real-ZTF Benchmark Freeze Gate",
+  "model_inference_status": "ZERO model forward passes, ZERO embedding extractions, and ZERO anomaly score calculations were performed before this freeze. The production checkpoint remains strictly frozen and verified.",
+  "production_checkpoint": {
+    "path": "models/checkpoints/acei_multimodal_production.pt",
+    "sha256": "e5c78fdc6f72cf972f4a3f5bf1b99dbb704aa7f047f7ed46ead1e9e538ffbc72",
+    "status": "FROZEN_VERIFIED"
+  },
+  "candidate_counts": {
+    "total_queried_candidates": 180,
+    "primary_benchmark_count": 106,
+    "secondary_limited_count": 31,
+    "total_excluded_from_primary": 74,
+    "exclusions_breakdown": {
+      "AMBIGUOUS_ASSOCIATION": 28,
+      "NO_DATA": 9,
+      "INSUFFICIENT_OBSERVATIONS": 6,
+      "COVERAGE_LIMITED_HELD_IN_SECONDARY": 31
+    }
+  },
+  "eligibility_criteria": {
+    "coordinate_crossmatch": "Haversine distance <= 1.5 arcsec",
+    "ambiguity_safety_margin": "Minimum angular separation gap >= 0.3 arcsec",
+    "valid_token_count_min": 20,
+    "padding_fraction_max": 0.6,
+    "provenance_requirement": "VERIFIED (spectroscopic IAU TNS/BTS, Gaia DR3, or published literature)",
+    "pilot_isolation": "Strict exclusion of the 5 historical transfer-pilot objects",
+    "duplicate_tolerance": "Zero coordinate collisions within 1.5 arcsec",
+    "ground_truth_isolation": "Zero test labels accessible to models during training/calibration"
+  },
+  "primary_population_breakdown": {
+    "by_population_family": {
+      "Variable_Star": 24,
+      "SN_Ia": 19,
+      "SN_II": 15,
+      "Unclassified_Field_Star": 14,
+      "TDE": 14,
+      "Cataclysmic_Variable": 13,
+      "SLSN": 7
+    },
+    "by_authoritative_class": {
+      "Variable_Star": 24,
+      "SN Ia": 19,
+      "Unclassified Field Star": 14,
+      "TDE": 14,
+      "Cataclysmic_Variable": 13,
+      "SN II": 9,
+      "SLSN-I": 5,
+      "SN IIP": 4,
+      "SLSN-II": 2,
+      "SN IIb": 2
+    }
+  },
+  "secondary_population_breakdown": {
+    "by_population_family": {
+      "SN_Ia": 12,
+      "SN_II": 9,
+      "SLSN": 6,
+      "Cataclysmic_Variable": 2,
+      "Unclassified_Field_Star": 1,
+      "TDE": 1
+    },
+    "by_authoritative_class": {
+      "SN Ia": 12,
+      "SN II": 7,
+      "SLSN-II": 4,
+      "Cataclysmic_Variable": 2,
+      "SLSN-I": 2,
+      "SN IIP": 2,
+      "Unclassified Field Star": 1,
+      "TDE": 1
+    }
+  },
+  "file_sha256_digests": {
+    "candidate_registry_csv": "8c365b996156ce77561ff702343ef01412a7ee3ab306ce4a78e967a1c0f816ad",
+    "full_retrieval_results_csv": "c5f452221f91f514221ca1c07863f10399833a8d31665ed5a9ad97008c482502",
+    "benchmark_eligibility_csv": "46d17c86592dea0586885f95f6df1a5cded9a30d347a679af10ebb37fc8a14ad",
+    "frozen_primary_benchmark_csv": "0e839c8f8ff1b83969e3f959a2be3342a96ac2564d00e73b045a21445cd4501c",
+    "frozen_secondary_limited_csv": "4690dea41c5ecb5b31f8d732905613fbdb52ce8596435b2b22fa7a0ca6bad3f6",
+    "production_checkpoint_pt": "e5c78fdc6f72cf972f4a3f5bf1b99dbb704aa7f047f7ed46ead1e9e538ffbc72"
+  }
+}

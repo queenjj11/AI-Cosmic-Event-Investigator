@@ -1,0 +1,21 @@
+coverage_variable,variable_label,detector_score,score_label,pearson_r,pearson_pvalue,spearman_rho,spearman_pvalue,statistically_significant_p05
+valid_token_count,Valid Token Count,ensemble_score,Ensemble Anomaly Score,-0.37418290802470433,7.77247895044774e-05,-0.3693940698482691,9.746839791676853e-05,True
+valid_token_count,Valid Token Count,norm_ae,Normalized Autoencoder Score,-0.32166881981254086,0.0007728369158201628,-0.29294549955579396,0.0023079363989401106,True
+valid_token_count,Valid Token Count,norm_mahalanobis,Normalized Mahalanobis Score,-0.3309019212107197,0.0005310457662178221,-0.45785686706413486,8.025305072664631e-07,True
+valid_token_count,Valid Token Count,norm_energy,Normalized Energy Score,0.0035573497719520245,0.9711300576579652,0.04103320579988808,0.6762179737837719,False
+padding_fraction,Padding Fraction,ensemble_score,Ensemble Anomaly Score,0.37418290802470433,7.77247895044774e-05,0.3693940698482691,9.746839791676853e-05,True
+padding_fraction,Padding Fraction,norm_ae,Normalized Autoencoder Score,0.3216688198125408,0.0007728369158201628,0.29294549955579396,0.0023079363989401106,True
+padding_fraction,Padding Fraction,norm_mahalanobis,Normalized Mahalanobis Score,0.33090192121071965,0.0005310457662178221,0.45785686706413486,8.025305072664631e-07,True
+padding_fraction,Padding Fraction,norm_energy,Normalized Energy Score,-0.0035573497719520453,0.9711300576579652,-0.04103320579988808,0.6762179737837719,False
+filter_count,Available Filter Count,ensemble_score,Ensemble Anomaly Score,-0.2830993630120138,0.0032764887698638083,-0.31383561763687423,0.0010528703306225803,True
+filter_count,Available Filter Count,norm_ae,Normalized Autoencoder Score,-0.16544621319239117,0.09009863169346288,-0.23279825158040435,0.01632894321683088,True
+filter_count,Available Filter Count,norm_mahalanobis,Normalized Mahalanobis Score,-0.33460936857357826,0.00045525404546674743,-0.48327738302767487,1.543771260019263e-07,True
+filter_count,Available Filter Count,norm_energy,Normalized Energy Score,-0.12730660665506702,0.19344363431132847,-0.10976879584012737,0.26265938001834394,False
+baseline_days,Survey Baseline Days,ensemble_score,Ensemble Anomaly Score,-0.24393542186222045,0.011739514470989674,-0.22968158987826612,0.01786355864261218,True
+baseline_days,Survey Baseline Days,norm_ae,Normalized Autoencoder Score,-0.2527160499790715,0.008959670038245252,-0.26577073989051114,0.0058954960596847815,True
+baseline_days,Survey Baseline Days,norm_mahalanobis,Normalized Mahalanobis Score,-0.17853778945674653,0.06708476250862978,-0.15152706367191024,0.12101277008534095,False
+baseline_days,Survey Baseline Days,norm_energy,Normalized Energy Score,0.09317252439597734,0.34213037477981445,0.19376376506853663,0.046572203108373095,True
+window_span_days,Observation Window Span Days,ensemble_score,Ensemble Anomaly Score,-0.25880825513231787,0.007388572812875445,-0.22974144011607991,0.017832955389075398,True
+window_span_days,Observation Window Span Days,norm_ae,Normalized Autoencoder Score,-0.22954123885343752,0.017935502303771927,-0.19169303319159228,0.049011041910467096,True
+window_span_days,Observation Window Span Days,norm_mahalanobis,Normalized Mahalanobis Score,-0.2027851100850751,0.03709128238842208,-0.2999435722778662,0.001785645231981774,True
+window_span_days,Observation Window Span Days,norm_energy,Normalized Energy Score,-0.020556288501295487,0.8343290877449748,-0.11608996191128756,0.23599400401022216,False

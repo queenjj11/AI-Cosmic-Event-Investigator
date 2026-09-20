@@ -1,0 +1,111 @@
+================================================================================
+     ACEI CONTROLLED DETECTOR ABLATION EXPERIMENT: EMPIRICAL REPORT
+================================================================================
+
+1. EXPERIMENTAL SETUP
+--------------------------------------------------------------------------------
+Benchmark Test Set:    reports/anomaly_evaluation.csv (N = 50)
+  - Known Test Events: 20 (SN_Ia, SN_II, Stellar_Flare, Variable_Star)
+  - Held-out Anomalies:30 (10 LRN, 10 SLSN, 10 TDE)
+Fixed Anomaly Thresh:  0.65
+Seed & Splits:         Deterministic (ObjectLevelSplitter seed=42)
+Detector Norm Scores:  Identical raw & normalized score vectors across all ablations
+
+2. CONFIGURATION FORMULAS
+--------------------------------------------------------------------------------
+1. Mahalanobis only:          score = s_mah
+2. Autoencoder + Mahalanobis: score = 0.50 * s_ae + 0.50 * s_mah
+3. Mahalanobis + Energy:      score = 0.75 * s_mah + 0.25 * s_ene
+4. Full Ensemble (Current):   score = 0.80 * (0.40 * s_ae + 0.35 * s_mah + 0.25 * s_ene)
+                                    + 0.20 * max(s_ae, s_mah, s_ene)
+
+3. OVERALL METRICS TABLE (@ threshold = 0.65)
+--------------------------------------------------------------------------------
+Configuration              | AUROC   | AUPRC   | AP      | Acc    | Prec   | TPR    | FPR    | F1     | TP/FP/TN/FN
+-------------------------------------------------------------------------------------------------------------------
+Mahalanobis only           | 0.7450  | 0.8257  | 0.8292  | 0.6000 | 0.8571 | 0.4000 | 0.1000 | 0.5455 | 12/2/18/18
+Autoencoder + Mahalanobis  | 0.6967  | 0.8003  | 0.8042  | 0.5600 | 0.7857 | 0.3667 | 0.1500 | 0.5000 | 11/3/17/19
+Mahalanobis + Energy       | 0.7083  | 0.7460  | 0.7571  | 0.5400 | 0.8182 | 0.3000 | 0.1000 | 0.4390 | 9/2/18/21
+Full Ensemble (Current)    | 0.6950  | 0.7412  | 0.7520  | 0.5400 | 0.7333 | 0.3667 | 0.2000 | 0.4889 | 11/4/16/19
+
+4. PER-ANOMALY-CLASS RECALL & KNOWN-EVENT FPR TABLE
+--------------------------------------------------------------------------------
+Configuration              | LRN Rec   | SLSN Rec  | TDE Rec   | Known FPR  | TPR @ <=10% FPR
+---------------------------------------------------------------------------------------------
+Mahalanobis only           | 10.0    % | 100.0   % | 10.0    % | 10.0     % | 40.0    %
+Autoencoder + Mahalanobis  | 10.0    % | 90.0    % | 10.0    % | 15.0     % | 33.3    %
+Mahalanobis + Energy       | 10.0    % | 70.0    % | 10.0    % | 10.0     % | 40.0    %
+Full Ensemble (Current)    | 20.0    % | 80.0    % | 10.0    % | 20.0     % | 26.7    %
+
+5. MEAN ANOMALY SCORES BY CLASS
+--------------------------------------------------------------------------------
+Configuration              | Known Mean  | LRN Mean   | SLSN Mean  | TDE Mean  
+-------------------------------------------------------------------------------
+Mahalanobis only           | 0.1755      | 0.2204     | 0.9072     | 0.2043    
+Autoencoder + Mahalanobis  | 0.2249      | 0.2500     | 0.8862     | 0.1895    
+Mahalanobis + Energy       | 0.1846      | 0.2523     | 0.6831     | 0.2103    
+Full Ensemble (Current)    | 0.2507      | 0.3090     | 0.7204     | 0.2230    
+
+6. RANKINGS & STATISTICAL SIGNIFICANCE TESTING
+--------------------------------------------------------------------------------
+Rank by AUROC: 1. Mahalanobis only (0.7450) > 2. Mahalanobis + Energy (0.7083) > 3. Autoencoder + Mahalanobis (0.6967) > 4. Full Ensemble (Current) (0.6950)
+Rank by AUPRC: 1. Mahalanobis only (0.8257) > 2. Autoencoder + Mahalanobis (0.8003) > 3. Mahalanobis + Energy (0.7460) > 4. Full Ensemble (Current) (0.7412)
+Rank by F1:    1. Mahalanobis only (0.5455) > 2. Autoencoder + Mahalanobis (0.5000) > 3. Full Ensemble (Current) (0.4889) > 4. Mahalanobis + Energy (0.4390)
+
+Paired Bootstrap Hypothesis Tests on AUROC Difference vs. Mahalanobis only (N_boot=2000):
+  - Mahalanobis vs. Autoencoder + Mahalanobis:
+      Delta AUROC mean = +0.0487, 95% CI = [+0.0000, +0.1042], p = 0.0530
+      Statistical significance at alpha=0.05: NO (p >= 0.05)
+  - Mahalanobis vs. Mahalanobis + Energy:
+      Delta AUROC mean = +0.0359, 95% CI = [-0.0370, +0.1024], p = 0.3290
+      Statistical significance at alpha=0.05: NO (p >= 0.05)
+  - Mahalanobis vs. Full Ensemble (Current):
+      Delta AUROC mean = +0.0483, 95% CI = [-0.0417, +0.1306], p = 0.2880
+      Statistical significance at alpha=0.05: NO (p >= 0.05)
+
+7. SCIENTIFIC INTERPRETATION & ANSWERS TO QUESTIONS
+--------------------------------------------------------------------------------
+A. Does AE improve Mahalanobis?
+   NO. Combining AE with Mahalanobis decreases AUROC from 0.7450 to 0.6967 and AUPRC
+   from 0.8257 to 0.8003, while increasing known-event FPR from 10.0% to 15.0%.
+   AE reconstruction errors on normal events degrade precision.
+
+B. Does Energy improve Mahalanobis?
+   NO. Adding Energy decreases AUROC from 0.7450 to 0.7083, AUPRC from 0.8257 to 0.7460,
+   and overall recall from 40.0% to 30.0% (SLSN recall drops from 100% to 70%).
+   High classifier overconfidence on extreme flux transients drives Energy scores near zero,
+   artificially dampening Mahalanobis anomaly detection.
+
+C. Does the full ensemble improve over Mahalanobis?
+   NO. The full ensemble achieves AUROC 0.6950 (vs 0.7450), AUPRC 0.7412 (vs 0.8257),
+   F1 0.4889 (vs 0.5455), and doubles the known-event FPR from 10.0% to 20.0%.
+
+D. Which configuration gives the best AUROC?
+   Mahalanobis only (AUROC = 0.7450).
+
+E. Which configuration gives the best AUPRC?
+   Mahalanobis only (AUPRC = 0.8257).
+
+F. Which configuration gives the best F1?
+   Mahalanobis only (F1 = 0.5455).
+
+G. Which gives the best TPR at 10% or lower FPR, if measurable?
+   Mahalanobis only achieves 40.0% TPR at <=10% FPR (specifically, at exactly 10% FPR,
+   Mahalanobis achieves 40.0% recall, compared to 26.7% for the current ensemble).
+
+H. Does any added detector provide meaningful complementary information?
+   Minimally. Out of 30 anomalies, AE uniquely rescued 1 LRN event (LRN_0015), but at the
+   cost of adding 2 false positives on normal events. Energy rescued 1 TDE event (TDE_0026)
+   while actively suppressing 2 SLSN detections.
+
+I. Is there evidence that Mahalanobis should become the primary anomaly signal?
+   YES. Mahalanobis distance strictly dominates all configurations across AUROC (0.7450),
+   AUPRC (0.8257), F1 (0.5455), Accuracy (0.6000), Precision (0.8571), and FPR (10.0%).
+   However, the AUROC advantage (+0.0500 vs ensemble) is not yet statistically significant
+   at alpha=0.05 (bootstrap p = 0.2880) due to test sample size N=50.
+
+J. Should Energy be retained, down-weighted, or investigated separately?
+   Energy should be DOWN-WEIGHTED or investigated separately. In its current form, closed-world
+   logits without temperature scaling or energy calibration produce negative rank correlation
+   with ground-truth anomalies (rho = -0.0962). Retaining it at 25% degrades ensemble quality.
+================================================================================

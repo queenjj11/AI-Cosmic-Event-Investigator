@@ -1,0 +1,83 @@
+{
+  "catalog_name": "ACEI Astrophysical Transient Reference Catalog",
+  "version": "1.0",
+  "entries": [
+    {
+      "class_id": "SN_Ia",
+      "canonical_name": "Type Ia Supernova",
+      "physical_mechanism": "Thermonuclear runaway of a carbon-oxygen white dwarf approaching Chandrasekhar mass",
+      "peak_absolute_magnitude_range": [-19.5, -18.8],
+      "rise_time_days": [15, 20],
+      "decay_rate_mag_per_day": [0.08, 0.12],
+      "color_g_minus_r_at_peak": [-0.1, 0.2],
+      "diagnostic_signatures": "Si II 6355A absorption, rapid post-peak decline, lack of hydrogen lines",
+      "literature_reference": "Phillips (1993), Howell (2011)"
+    },
+    {
+      "class_id": "SN_II",
+      "canonical_name": "Type II Core-Collapse Supernova",
+      "physical_mechanism": "Gravitational collapse of an iron core in a massive star (>8 solar masses)",
+      "peak_absolute_magnitude_range": [-17.5, -16.0],
+      "rise_time_days": [8, 15],
+      "decay_rate_mag_per_day": [0.005, 0.03],
+      "color_g_minus_r_at_peak": [-0.2, 0.3],
+      "diagnostic_signatures": "Prominent Balmer hydrogen P-Cygni lines, extended 80-100 day optical plateau (Type II-P)",
+      "literature_reference": "Arcavi et al. (2012), Smartt (2009)"
+    },
+    {
+      "class_id": "Stellar_Flare",
+      "canonical_name": "M-Dwarf Chromospheric Magnetic Flare",
+      "physical_mechanism": "Magnetic reconnection releasing stored magnetic energy in stellar corona",
+      "peak_absolute_magnitude_range": [-10.0, -5.0],
+      "rise_time_days": [0.01, 0.1],
+      "decay_rate_mag_per_day": [1.5, 5.0],
+      "color_g_minus_r_at_peak": [-0.5, 0.0],
+      "diagnostic_signatures": "Rapid rise in minutes (FRED profile), quick fading in hours, associated with quiescent red point source",
+      "literature_reference": "Kowalski et al. (2013), Schmidt et al. (2019)"
+    },
+    {
+      "class_id": "Variable_Star",
+      "canonical_name": "Periodic Variable Star (Cepheid / RR Lyrae)",
+      "physical_mechanism": "Stellar pulsations driven by kappa-mechanism in helium ionization zone",
+      "peak_absolute_magnitude_range": [-4.0, 1.0],
+      "rise_time_days": [0.2, 5.0],
+      "decay_rate_mag_per_day": [0.1, 0.5],
+      "color_g_minus_r_at_peak": [0.2, 0.6],
+      "diagnostic_signatures": "Strictly periodic variation in Lomb-Scargle periodogram, asymmetric saw-tooth or sinusoidal light curve",
+      "literature_reference": "Catelan & Smith (2015)"
+    },
+    {
+      "class_id": "LRN",
+      "canonical_name": "Luminous Red Nova",
+      "physical_mechanism": "Stellar merger in binary system accompanied by common-envelope dynamic ejection",
+      "peak_absolute_magnitude_range": [-14.5, -11.5],
+      "rise_time_days": [25, 60],
+      "decay_rate_mag_per_day": [0.02, 0.05],
+      "color_g_minus_r_at_peak": [0.8, 1.8],
+      "diagnostic_signatures": "Double-peaked light curve, rapid color reddening, intense late-time NIR dust emission",
+      "literature_reference": "Ivanova et al. (2013), Pastorello et al. (2019)"
+    },
+    {
+      "class_id": "SLSN",
+      "canonical_name": "Superluminous Supernova",
+      "physical_mechanism": "Central millisecond magnetar spin-down or circumstellar interaction",
+      "peak_absolute_magnitude_range": [-22.5, -21.0],
+      "rise_time_days": [30, 70],
+      "decay_rate_mag_per_day": [0.01, 0.03],
+      "color_g_minus_r_at_peak": [-0.3, 0.1],
+      "diagnostic_signatures": "Extreme peak luminosity, broad early O II absorption, prolonged blue UV emission",
+      "literature_reference": "Gal-Yam (2012), Kasen & Bildsten (2010)"
+    },
+    {
+      "class_id": "TDE",
+      "canonical_name": "Tidal Disruption Event",
+      "physical_mechanism": "Hydrodynamic disruption of a star passing within tidal radius of a supermassive black hole",
+      "peak_absolute_magnitude_range": [-21.0, -19.0],
+      "rise_time_days": [15, 35],
+      "decay_rate_mag_per_day": [0.03, 0.06],
+      "color_g_minus_r_at_peak": [-0.4, 0.0],
+      "diagnostic_signatures": "Centroid coincident with galactic nucleus (offset < 0.1 arcsec), smooth t^{-5/3} decline, non-evolving blue temperature",
+      "literature_reference": "Gezari (2021), van Velzen et al. (2020)"
+    }
+  ]
+}
